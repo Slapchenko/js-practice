@@ -137,16 +137,16 @@ orderedQuantity - количество единиц товара в заказе
 pricePerItem - цена одной единицы товара.
 Дополни код функции так, чтобы в переменную totalPrice записывалась общая сумма покупки, результат умножения кол-ва товаров на цену одного. */
 
-//function calculateTotalPrice(orderedQuantity, pricePerItem) {
-// Change code below this line
-// const totalPrice = orderedQuantity * pricePerItem;
+/* function calculateTotalPrice(orderedQuantity, pricePerItem) {
+  // Change code below this line
+  const totalPrice = orderedQuantity * pricePerItem;
 
-// Change code above this line
-//return totalPrice;
-//}
+  // Change code above this line
+  return totalPrice;
+}
 
-//calculateTotalPrice(5, 100);
-//console.log(calculateTotalPrice(5, 100));
+calculateTotalPrice(5, 100);
+console.log(calculateTotalPrice(5, 100)); */
 
 /* 12. ЗАДАЧА: ЗАКАЗ ПРОДУКТА 2.0
 Функция makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) составляет и возвращает сообщение о покупке ремонтных дроидов. Она объявляет три параметра, значения которых будут задаваться во время её вызова.
@@ -242,3 +242,205 @@ ordered - единиц товара в заказе
 }
 checkStorage(5, 2);
 console.log(checkStorage(5, 2)); */
+
+/* 17. КОМБИНИРОВАННЫЙ ОПЕРАТОР ПРИСВОЕНИЯ
+Замени выражения со стандартными математеческими операторами на комбинированный оператор присвоения с добавлением, вычитанием, умножением и делением. */
+
+/* let a = 5;
+let b = 10;
+let c = 15;
+let d = 20;
+
+// Change code below this line
+a += 2;
+b -= 4;
+c *= 3;
+d /= 10;
+
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d); */
+
+/* 18. ЗАДАЧА: ПРОВЕРКА БАЛАНСА
+Станция по продаже ремонтных дроидов готова к запуску, осталось написать программное обеспечение для отдела продаж.
+
+Функция makeTransaction(pricePerDroid, orderedQuantity, customerCredits) выполняет транзакцию по продаже дроидов и возвращает сообщение о результате операции. Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+
+pricePerDroid - цена одного дроида
+orderedQuantity - кол-во заказанных дроидов
+customerCredits - сумма средств на счету клиента
+Дополни её следующим функционалом:
+
+Объяви переменную totalPrice для хранения общей суммы заказа и присвой ей выражение расчёта этой суммы.
+Добавь проверку сможет ли клиент оплатить заказ:
+если сумма к оплате превышает количество кредитов на счету клиента, запиши в переменную message строку "Insufficient funds!";
+в противном случае, вычти сумму покупки со счёта клиента и запиши в переменную message сообщение: "You ordered <число> droids, you have <число> credits left". */
+
+/* function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Change code below this line
+  const totalPrice = pricePerDroid * orderedQuantity;
+  if (totalPrice > customerCredits) {
+    message = `Insufficient funds!`;
+  } else {
+    customerCredits -= totalPrice;
+    message = `You ordered ${orderedQuantity} droids, you have ${customerCredits} credits left`;
+  }
+  // Change code above this line
+  return message;
+}
+
+makeTransaction(100, 1, 200);
+console.log(makeTransaction(100, 1, 200)); */
+
+/* 19. БЛОК ELSE...IF
+Функция checkPassword(password) получает пароль пользователя в параметр password, проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD и возвращает сообщение о результате сравнения, хранящееся в переменной message.
+
+Если значение параметра password равно null, значит пользователь отменил операцию и в message записывается строка "Canceled by user!".
+Если значение параметра password совпадает со значением ADMIN_PASSWORD, в переменную message присваивается строка "Welcome!".
+Если ни одно из предыдущих условий не выполнилось, в переменную message записывается строка "Access denied, wrong password!". */
+
+/* function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+  let message;
+
+  if (password === null) {
+    // Change this line
+    message = 'Canceled by user!';
+  } else if (password === ADMIN_PASSWORD) {
+    // Change this line
+    message = 'Welcome!';
+  } else {
+    message = 'Access denied, wrong password!';
+  }
+
+  return message;
+}
+
+checkPassword(`qwerty`);
+console.log(checkPassword(`qwerty`)); */
+
+/* 20. ЗАДАЧА: СКЛАД ТОВАРОВ 2.0 
+Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
+
+available - доступное количество товаров на складе
+ordered - единиц товара в заказе
+Используя ветвления дополни код функции так, что:
+
+Если в заказе еще нет товаров, то есть значение параметра ordered равно 0, в переменную message присваивается строка "There are no products in the order!".
+Eсли товаров в заказе больше чем доступно товаров на складе, то в переменную message присваивается строка "Your order is too large, there are not enough items in stock!".
+В противном случае в переменную message присваевается строка "The order is accepted, our manager will contact you". */
+
+/* function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+  if (ordered === 0) {
+    message = `There are no products in the order!`;
+  } else if (ordered > available) {
+    message = `Your order is too large, there are not enough items in stock!`;
+  } else {
+    message = `The order is accepted, our manager will contact you`;
+  }
+  // Change code above this line
+  return message;
+}
+
+console.log(checkStorage(50, 51)); */
+
+/* 21. ЛОГИЧЕСКОЕ «И» (ОПЕРАТОР &&)
+Функция isNumberInRange(start, end, number) проверяет, входит ли число в промежуток. Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+
+number - число, вхождение которого проверяется
+start - начало числового промежутка
+end - конец числового промежутка
+Присвой переменной isInRange выражение проверки вхождения number в числовой промеждуток от start до end. То есть число должно быть больше либо равно start и меньше либо равно end. Результатом выражения проверки будет буль true или false. */
+
+/* function isNumberInRange(start, end, number) {
+  const isInRange = start < number && number < end; // Change this line
+
+  return isInRange;
+}
+
+console.log(isNumberInRange(1, 100, 50)); */
+
+/* 22. ЛОГИЧЕСКОЕ «ИЛИ» (ОПЕРАТОР ||)
+Функция checkIfCanAccessContent(subType) проверяет, может ли пользователь получить доступ к контенту. Проверка происходит по типу подписки. Получить доступ могут только пользователи с подпиской pro или vip.
+
+Присвой переменной canAccessContent выражение проверки подписки. Если значение параметра subType равно строкам "pro" или "vip", пользователь получит доступ. Результатом выражения проверки будет буль true или false. */
+
+/* function checkIfCanAccessContent(subType) {
+  const canAccessContent = subType === `pro` || subType === `vip`; // Change this line
+  return canAccessContent;
+}
+
+console.log(checkIfCanAccessContent(`pro`)); */
+
+/* 23. ЛОГИЧЕСКОЕ «НЕ» (ОПЕРАТОР!)
+Функция isNumberNotInRange(start, end, number) проверяет, не входит ли число в промежуток. То есть число должно быть меньше либо равно start и больше либо равно end. Результатом выражения проверки будет буль true или false.
+
+Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+
+number - число, не вхождение которого проверяется
+start - начало числового промежутка
+end - конец числового промежутка
+Присвой переменной isNotInRange выражение инверсии значения переменной isInRange используя оператор !. */
+
+/* function isNumberNotInRange(start, end, number) {
+  const isInRange = number >= start && number <= end;
+  const isNotInRange = !isInRange; // Change this line
+
+  return isNotInRange;
+}
+
+console.log(isNumberNotInRange(1, 100, 99)); */
+
+/* 24. ЗАДАЧА: РАСЧЁТ СКИДКИ
+Функция getDiscount(totalSpent) определяет значение скидки в зависимости от общей суммы потраченных денег (параметр totalSpent) в магазине за всё время (партнёрская программа). Скидка записывается в переменную discount и возвращается из функции как результат её работы.
+
+Используя ветвления и логические операторы, дополни код функции.
+
+Если потрачено от 50000 ( включительно ) или больше кредитов - скидка 10% (золотой партнёр)
+Если потрачено от 20000 (включительно) до 50000 кредитов - скидка 5% (серебрянный партнёр)
+Если потрачено от 5000 (включительно) до 20000 кредитов - скидка 2% (бронзовый партнёр)
+Если потрачено меньше чем 5000 кредитов - скидка 0 (базовый партнёр)
+Значения скидок каждого уровня хранятся в одноимённых константах BASE_DISCOUNT, BRONZE_DISCOUNT, SILVER_DISCOUNT и GOLD_DISCOUNT. */
+
+/* function getDiscount(totalSpent) {
+  const BASE_DISCOUNT = 0;
+  const BRONZE_DISCOUNT = 0.02;
+  const SILVER_DISCOUNT = 0.05;
+  const GOLD_DISCOUNT = 0.1;
+  let discount;
+  // Change code below this line
+  if (totalSpent >= 50000) {
+    discount = GOLD_DISCOUNT;
+  } else if (totalSpent >= 20000 && totalSpent < 50000) {
+    discount = SILVER_DISCOUNT;
+  } else if (totalSpent >= 5000 && totalSpent < 20000) {
+    discount = BRONZE_DISCOUNT;
+  } else if (totalSpent < 5000) {
+    discount = BASE_DISCOUNT;
+  }
+  // Change code above this line
+  return discount;
+}
+
+console.log(getDiscount(137000)); */
+
+/* 25. ТЕРНАРНЫЙ ОПЕРАТОР
+Выполни рефакторинг решения задачи «Склад товаров», заменив инструкцию if...else тернарным оператором. */
+
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+
+  if (ordered > available) {
+    message = 'Not enough goods in stock!';
+  } else {
+    message = 'The order is accepted, our manager will contact you';
+  }
+
+  // Change code above this line
+  return message;
+}
