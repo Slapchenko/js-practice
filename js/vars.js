@@ -147,3 +147,52 @@ pricePerItem - цена одной единицы товара.
 
 //calculateTotalPrice(5, 100);
 //console.log(calculateTotalPrice(5, 100));
+
+/* 12. ЗАДАЧА: ЗАКАЗ ПРОДУКТА 2.0
+Функция makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) составляет и возвращает сообщение о покупке ремонтных дроидов. Она объявляет три параметра, значения которых будут задаваться во время её вызова.
+
+orderedQuantity - количество дроидов в заказе
+pricePerDroid - цена одного дроида
+deliveryFee - стоимость доставки
+Дополни код функции так, чтобы она возвращала сообщение о заказе в формате "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price.". Не забудь о цене доставки при вычислениях общей стоимости. */
+
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+// Change code below this line
+//  const totalPrice = orderedQuantity * pricePerDroid + deliveryFee;
+//  const message = `You ordered droids worth ${totalPrice} credits. Delivery // (${deliveryFee} credits) is included in total price.`;
+// Change code above this line
+//  return message;
+// }
+// makeOrderMessage(2, 5, 2);
+// console.log(makeOrderMessage(2, 5, 2));
+
+/* 13. ОПЕРАТОРЫ СРАВНЕНИЯ >, >=, < И <=
+Функция isAdult объявляет один параметр age (возраст), значение которого будет задаваться во время её вызова. Присвой переменной passed выражение проверки возраста пользователя на совершеннолетие. Человек считается совершеннолетним в возрасте 18 лет и старше. */
+
+// function isAdult(age) {
+// Change code below this line
+// const passed = age >= 18;
+
+// Change code above this line
+// return passed;
+// }
+
+// isAdult(19);
+// console.log(isAdult(19));
+
+/* 14. ОПЕРАТОРЫ СРАВНЕНИЯ === И !==
+Функция isValidPassword(password) проверяет равенство сохранённого и введённого паролей и возвращает результат проверки - буль true или false. Переменная SAVED_PASSWORD хранит значение ранее сохраненного пароля. Введённый пароль передаётся в параметр password.
+
+Присвой переменной isMatch выражение проверки равенства введённого и сохранённого ранее паролей. Результатом выражения проверки должно быть true, если значения совпадают, и false, если нет. */
+
+// function isValidPassword(password) {
+// const SAVED_PASSWORD = 'jqueryismyjam';
+// Change code below this line
+//  isMatch = SAVED_PASSWORD === password;
+
+// Change code above this line
+// return isMatch;
+// }
+
+// isValidPassword(`jqueryismyjam`);
+// console.log(isValidPassword(`jqueryismyjam`));
