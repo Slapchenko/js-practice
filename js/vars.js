@@ -196,3 +196,49 @@ deliveryFee - стоимость доставки
 
 // isValidPassword(`jqueryismyjam`);
 // console.log(isValidPassword(`jqueryismyjam`));
+
+/* 15. ИНСТРУКЦИЯ IF...ELSE
+Добавь выражение проверки совершеннолетия пользователя, значения параметра age, в условие для инструкции if.
+
+Если пользователь совершеннолетний, должен выполняться блок if и в переменную message записывается строка "You are an adult".
+В противном случае должен выполняться блок else и записывается строка "You are a minor". */
+
+// function checkAge(age) {
+//  let message;
+
+//  if (age >= 18) {
+// Change this line
+// message = 'You are an adult';
+//  } else {
+// message = 'You are a minor';
+//  }
+
+//  return message;
+// }
+
+// checkAge(19);
+// console.log(checkAge(19));
+
+/* 16. ЗАДАЧА: СКЛАД ТОВАРОВ
+Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+
+available - общее количество товаров на складе
+ordered - единиц товара в заказе
+Используя ветвления дополни код функции так, что:
+
+Если в заказе указано число, превышающее количество товаров на складе, в переменную message записывается строка "Not enough goods in stock!".
+В противном случае записывается строка "Order is processed, our manager will contact you.". */
+
+/* function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+  if (ordered > available) {
+    message = `Not enough goods in stock!`;
+  } else {
+    message = `Order is processed, our manager will contact you.`;
+  }
+  // Change code above this line
+  return message;
+}
+checkStorage(5, 2);
+console.log(checkStorage(5, 2)); */
