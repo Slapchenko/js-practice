@@ -536,3 +536,126 @@ console.log(getSubscriptionPrice(`professional`)); */
 }
 
 console.log(checkPassword('jqueryismyjam')); */
+
+/* 29. ЗАДАЧА: ДОСТАВКА ТОВАРА
+Функция getShippingCost(country) должна проверять возможность доставки товара в страну пользователя (параметр country) и возвращать сообщение о результате хранящееся в переменной message. Обязательно используй инструкцию switch.
+
+Формат возвращаемой строки "Shipping to <country> will cost <price> credits", где вместо <country> и <price> необходимо подставить соотвествующие значения.
+
+Список стран и стоимость доставки:
+
+China - 100 кредитов
+Chile - 250 кредитов
+Australia - 170 кредитов
+Jamaica - 120 кредитов
+Из списка видно, что доставка есть не везде. Если указанной страны нет в списке, то функция должна вернуть строку "Sorry, there is no delivery to your country" */
+
+/* function getShippingCost(country) {
+  let message;
+  let price;
+  // Change code below this line
+  switch (country) {
+    case `China`:
+      price = 100;
+      message = `Shipping to ${country} will cost ${price} credits`;
+      break;
+
+    case `Chile`:
+      price = 250;
+      message = `Shipping to ${country} will cost ${price} credits`;
+      break;
+
+    case `Australia`:
+      price = 170;
+      message = `Shipping to ${country} will cost ${price} credits`;
+      break;
+
+    case `Jamaica`:
+      price = 120;
+      message = `Shipping to ${country} will cost ${price} credits`;
+      break;
+
+    default:
+      message = `Sorry, there is no delivery to your country`;
+  }
+  // Change code above this line
+  return message;
+}
+
+console.log(getShippingCost(`Australia`)); */
+
+/* 30. ДЛИНА СТРОКИ
+Функция getNameLength(name) принимает имя (параметр name) и возвращает строку, в которой указана его длина. Дополни шаблонную строку в переменной message длиной строки из параметра name. */
+
+/* function getNameLength(name) {
+  const message = `Name ${name} is ${name.length} characters long`; // Change this line
+
+  return message;
+}
+console.log(getNameLength(`Serhii`)); */
+
+/* 31. ИНДЕКСАЦИЯ ЭЛЕМЕНТОВ СТРОКИ
+Дополни код присвоив объявленным переменным выражения обращения к соответствующим элементам или свойствам строки в переменной course.
+
+courseTopicLength - длина строки.
+firstElement - первый символ строки.
+lastElement - последний символ строки. */
+
+/* const courseTopic = 'JavaScript essentials';
+// Change code below this line
+
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement = courseTopic[courseTopic.length - 1];
+
+// Change code above this line
+console.log(courseTopicLength);
+console.log(firstElement);
+console.log(lastElement); */
+
+/* 32. МЕТОД SLICE()
+Функция getSubstring(string, length) принимает строку и возвращает подстроку от начала и до length символов. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+
+string - оригинальная строка
+length - количество символов с начала строки для подстроки
+Присвой переменной substring выражение создания подстроки длинной length символов (от начала) из строки string. */
+
+/* function getSubstring(string, length) {
+  const substring = string.slice(0, length); // Change this line
+
+  return substring;
+}
+
+console.log(getSubstring('Hello world', 3)); */
+
+/* 33. ЗАДАЧА: ФОРМАТИРОВАНИЕ СООБЩЕНИЯ
+Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
+
+Дополни код функции так, что если длина строки:
+
+не превышает maxLength, функция возвращает её в исходном виде.
+больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...", после чего возвращает укороченную версию. */
+
+/* function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+  if (message.length <= maxLength) {
+    result = message;
+  } else {
+    result = `${message.slice(0, maxLength)}...`;
+  }
+  /// Change code above this line
+  return result;
+}
+console.log(formatMessage('Curabitur ligula sapien', 23)); */
+
+/* 34. МЕТОДЫ TOLOWERCASE() И TOUPPERCASE()
+Функция normalizeInput(input) принимает строку (параметр input) и возвращает такую же строку, но в нижнем регистре. Присвой переменной normalizedInput выражение создания строки в нижнем регистре из параметра input. */
+
+/* function normalizeInput(input) {
+  const normalizedInput = input.toLowerCase(); // Change this line
+
+  return normalizedInput;
+}
+
+console.log(normalizeInput(`tEst`)); */
