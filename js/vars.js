@@ -659,3 +659,30 @@ console.log(formatMessage('Curabitur ligula sapien', 23)); */
 }
 
 console.log(normalizeInput(`tEst`)); */
+
+/* 35. МЕТОД INCLUDES()
+Функция checkName(fullname, name) принимает два параметра и возвращает буль true или false - результат проверки вхождения подстроки name в строку fullname.
+
+fullname - полное имя состоящее из двух слов (имени и фамилии) разделённых пробелом.
+name - имя для проверки вхождения в полное имя.
+Присвой переменной result выражение проверки вхождения имени (параметр name), в полное имя (параметр fullname). Пусть функция строго относится к регистру букв, то есть «Петя» и «петя» для неё разные имена. */
+
+/* function checkForName(fullName, name) {
+  const result = fullName.includes(name); // Change this line
+  return result;
+}
+console.log(checkForName(`Serhii Lapchenko`, `Serhii`)); */
+
+/* 36. ЗАДАЧА: ПРОВЕРКА СПАМА
+Функция checkForSpam(message) принимает строку (параметр message), проверяет её на содержание запрещенных слов spam и sale, и возвращает результат проверки. Слова в строке параметра message могут быть в произвольном регистре, например SPAM или sAlE.
+
+Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
+Если в строке нет запрещенных слов, функция возвращает буль false. */
+
+function checkForSpam(message) {
+  let result;
+  const normalizedMessage = message.toLowerCase();
+  result = normalizedMessage.includes(`spam`) || normalizedMessage.includes(`sale`);
+  return result;
+}
+console.log(checkForSpam(`This is salE`));
