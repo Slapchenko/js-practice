@@ -431,16 +431,108 @@ console.log(getDiscount(137000)); */
 /* 25. ТЕРНАРНЫЙ ОПЕРАТОР
 Выполни рефакторинг решения задачи «Склад товаров», заменив инструкцию if...else тернарным оператором. */
 
-function checkStorage(available, ordered) {
+/* function checkStorage(available, ordered) {
   let message;
   // Change code below this line
+  message =
+    ordered > available
+      ? 'Not enough goods in stock!'
+      : 'The order is accepted, our manager will contact you';
+  return message;
+}
 
-  if (ordered > available) {
-    message = 'Not enough goods in stock!';
-  } else {
-    message = 'The order is accepted, our manager will contact you';
-  }
+console.log(checkStorage(100, 50)); */
 
+/* 26. ЗАДАЧА: ПРОВЕРКА ПАРОЛЯ
+Функция checkPassword(password) сравнивает переданный ей пароль (параметр password) с сохранённым паролем администратора (константа ADMIN_PASSWORD) и возвращает строку с сообщением о результате.
+
+Используя тернарный оператор дополни функцию так, что:
+
+Если значения password и ADMIN_PASSWORD совпадают, присвой переменной message строку "Access is allowed".
+В противном случае, присвой message строку "Access denied, wrong password!". */
+
+/* function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+  let message;
+  // Change code below this line
+  message = password === ADMIN_PASSWORD ? `Access is allowed` : `Access denied, wrong password!`;
   // Change code above this line
   return message;
 }
+console.log(checkPassword(`qwerty`)); */
+
+/* 27. ИНСТРУКЦИЯ SWITCH
+Функция getSubscriptionPrice(type) получает строку с типом подписки пользователя (параметр type), проверяет её на совпадение с тремя возможными типами ежемесячной подписки и возвращает цену хранящуюся в переменной price.
+
+Если значение параметра type это строка:
+
+"starter" - цена подписки 0 кредитов.
+"professional" - цена подписки 20 кредитов.
+"organization" - цена подписки 50 кредитов.
+Изначально в теле функции была инструкция if...else, которая выглядела вот так.
+if (type === "starter") {
+  price = 0;
+} else if (type === "professional") {
+  price = 20;
+} else if (type === "organization") {
+  price = 50;
+}
+После рефакторинга инструкция if..else была заменена на switch. Дополни код инструкции switch, чтобы функция работала правильно. */
+
+/* function getSubscriptionPrice(type) {
+  let price;
+  // Change code below this line
+
+  switch (
+    type // Change this line
+  ) {
+    case 'starter': // Change this line
+      price = 0; // Change this line
+      break;
+
+    case 'professional': // Change this line
+      price = 20; // Change this line
+      break;
+
+    case 'organization': // Change this line
+      price = 50; // Change this line
+      break;
+  }
+
+  // Change code above this line
+  return price;
+}
+
+console.log(getSubscriptionPrice(`professional`)); */
+
+/* 28. ИНСТРУКЦИЯ SWITCH C БЛОКОМ DEFAULT
+Функция checkPassword(password) получает пароль в параметр password, проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD и возвращает сообщение о результате сравнения, хранящееся в переменной message.
+
+Если значение параметра password:
+
+равно null, значит пользователь отменил операцию и в message записывается строка "Canceled by user!".
+совпадает со значением ADMIN_PASSWORD, в переменную message присваивается строка "Welcome!".
+не удобвлетворяет ни одному из предыдущих условий, в переменную message записывается строка "Access denied, wrong password!".
+Проведи рефакторинг кода, заменив инструкцию if..else на switch, и не забудь о блоке default (аналог else). */
+
+/* function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+  let message;
+  // Change code below this line
+  switch (password) {
+    case null:
+      message = 'Canceled by user!';
+      break;
+
+    case ADMIN_PASSWORD:
+      message = 'Welcome!';
+      break;
+
+    default:
+      message = 'Access denied, wrong password!';
+  }
+  // Change code above this line
+  return message;
+}
+
+console.log(checkPassword('jqueryismyjam')); */
