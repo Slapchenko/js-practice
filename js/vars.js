@@ -386,14 +386,14 @@ start - начало числового промежутка
 end - конец числового промежутка
 Присвой переменной isNotInRange выражение инверсии значения переменной isInRange используя оператор !. */
 
-/* function isNumberNotInRange(start, end, number) {
-  const isInRange = number >= start && number <= end;
-  const isNotInRange = !isInRange; // Change this line
+// function isNumberNotInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end;
+//   const isNotInRange = !isInRange; // Change this line
 
-  return isNotInRange;
-}
+//   return isNotInRange;
+// }
 
-console.log(isNumberNotInRange(1, 100, 99)); */
+// console.log(isNumberNotInRange(1, 100, 99));
 
 /* 24. ЗАДАЧА: РАСЧЁТ СКИДКИ
 Функция getDiscount(totalSpent) определяет значение скидки в зависимости от общей суммы потраченных денег (параметр totalSpent) в магазине за всё время (партнёрская программа). Скидка записывается в переменную discount и возвращается из функции как результат её работы.
@@ -685,4 +685,5 @@ function checkForSpam(message) {
   result = normalizedMessage.includes(`spam`) || normalizedMessage.includes(`sale`);
   return result;
 }
+
 console.log(checkForSpam(`This is salE`));
