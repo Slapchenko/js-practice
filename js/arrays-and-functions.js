@@ -198,3 +198,205 @@ function getExtremeElements(array) {
 // }
 
 // console.log(getExtremeElements(`1`, `2`, `3`, `4`, `5`));
+
+/* 10. МЕТОД СТРОК SPLIT()
+Дополни код функции splitMessage(message, delimeter) так, чтобы она возвращала в переменной words результат разделения строки message по разделителю delimeter - массив строк.
+
+function splitMessage(message, delimeter) {
+  let words;
+  // Change code below this line
+
+  // Change code above this line
+  return words;
+} */
+
+// Решение:
+// function splitMessage(message, delimeter) {
+//   let words;
+
+//   words = message.split(delimeter);
+
+//   return words;
+// }
+
+// console.log(splitMessage(`message`, ''));
+
+/* 11. ЗАДАЧА: ГРАВИРОВКА УКРАШЕНИЙ
+Сервису гравировки украшений нужна функция, которая бы автоматически считала цену гравировки, в зависимости от количества слов и цены за слово.
+
+Объявлена функция calculateEngravingPrice(message, pricePerWord). Эта функция принимает строку, состоящую из слов разделённых только пробелами (параметр message) и цену гравировки одного слова (параметр pricePerWord).
+
+Напиши тело функции, чтобы она возвращала общую стоимость гравировки всех слов в строке.
+
+function calculateEngravingPrice(message, pricePerWord) {
+   // Change code below this line
+
+
+
+   // Change code above this line
+} */
+
+// !Решение 1:
+// function calculateEngravingPrice(message, pricePerWord) {
+//   const totalWords = message.split(' ').length;
+//   const totalEngravingCost = totalWords * pricePerWord;
+//   return totalEngravingCost;
+// }
+
+// console.log(calculateEngravingPrice(`message message message`, 10));
+
+// !Решение 2:
+// function calculateEngravingPrice(message, pricePerWord) {
+//   const totalEngravingCost = message.split(' ').length * pricePerWord;
+//   return totalEngravingCost;
+// }
+
+// console.log(calculateEngravingPrice(`message message message`, 10));
+
+/* 12. МЕТОД МАССИВА JOIN()
+Дополни код функции makeStringFromArray(array, delimeter) так, чтобы она возвращала в переменной string результат соединения элементов массива array c разделителем delimeter - строку.
+
+function makeStringFromArray(array, delimeter) {
+  let string;
+  // Change code below this line
+
+
+
+  // Change code above this line
+  return string;
+} */
+
+// !Решение:
+// function makeStringFromArray(array, delimeter) {
+//   let string;
+
+//   string = array.join(delimeter);
+
+//   return string;
+// }
+
+// console.log(makeStringFromArray(['Hello', 'world'], ' '));
+
+/* 13. ЗАДАЧА: ГЕНЕРАТОР SLUG
+Термин slug - это человеко-понятный уникальный идентификатор, который используется в веб-разработке для создания читабельных URL-адесов.
+
+Например, вместо того чтобы пользователь увидел в адресной строке mysite.com/posts/1q8fh74tx, можно сделать slug из названия статьи. В результате адрес получится более приятным для восприятия: mysite.com/posts/arrays-for-begginers.
+
+Внимание
+Slug это всегда строка в нижнем регистре, слова которой разделены тире.
+
+Напиши функцию slugify(title) которая принимает заголовок статьи, параметр title, и возвращает slug, созданный из этой строки.
+
+Значением параметра title будут строки, слова которых разделены только пробелами
+Все символы slug должны быть в нижнем регистре
+Все слова slug должна быть разделены тире
+
+function slugify(title) {
+  // Change code below this line
+
+
+
+  // Change code above this line
+} */
+
+// !Решение 1:
+// function slugify(title) {
+//   const titleToLowerCase = title.toLowerCase();
+//   const titleToArray = titleToLowerCase.split(' ');
+//   const arrayToString = titleToArray.join('-');
+//   return arrayToString;
+// }
+
+// console.log(slugify('Arrays for begginers'));
+
+// !Решение 2:
+// function slugify(title) {
+//   const resultSlugify = title.toLowerCase().split(' ').join('-');
+//   return resultSlugify;
+// }
+
+// console.log(slugify('Arrays for begginers'));
+
+/* 14. МЕТОД SLICE()
+Дополни код так, чтобы переменные содержали частичные копии исходного массива fruits.
+
+firstTwoEls - массив из первых двух элементов
+nonExtremeEls - массив из всех элементов кроме первого и последнего
+lastThreeEls - массив из трёх последних элементов
+
+const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+// Change code below this line
+const firstTwoEls = ;
+const nonExtremeEls = ;
+const lastThreeEls = ; */
+
+// !Решение:
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+// const firstTwoEls = fruits.slice(0, 2);
+// const nonExtremeEls = fruits.slice(1, fruits.length - 1);
+// const lastThreeEls = fruits.slice(-3);
+
+// console.table(fruits);
+// console.log(firstTwoEls);
+// console.log(nonExtremeEls);
+// console.log(lastThreeEls);
+
+/* 15. МЕТОД CONCAT()
+Дополни код так, чтобы в переменной allClients получился массив всех элементов массивов oldClients и newClients.
+
+const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+const newClients = ['Peach', 'Houston'];
+
+const allClients = ; // Change this line */
+
+// !Решение:
+// const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+// const newClients = ['Peach', 'Houston'];
+
+// const allClients = oldClients.concat(newClients);
+
+// console.log(allClients);
+
+/* 16. ЗАДАЧА: КОМПОЗИЦИЯ МАССИВОВ
+Напиши функцию makeArray(firstArray, secondArray, maxLength) для создания нового массива со всеми элементами двух исходных firstArray и secondArray. Параметр maxLength содержит максимально допустимую длину нового массива.
+
+Если количество элементов нового массива больше maxLength, функция должна вернуть копию массива длиной maxLength элементов.В противном случае функция должна вернуть новый массив целиком.
+
+function makeArray(firstArray, secondArray, maxLength) {
+    // Change code below this line
+
+
+
+    // Change code above this line
+  } */
+
+// !Решение:
+// function makeArray(firstArray, secondArray, maxLength) {
+//   const newArray = firstArray.concat(secondArray);
+//   if (maxLength >= newArray.length) {
+//     return newArray;
+//   }
+//   return newArray.slice(0, maxLength);
+// }
+
+// console.log(makeArray(['1', '2', '3', '4', '5'], ['6', '7', '8', '9', '10'], 5));
+
+/* 17. ЦИКЛ FOR
+Дополни цикл for так, чтобы он логировал все целые числа в диапазоне от start до end включительно.
+
+const start = 3;
+const end = 7;
+
+for (let i = ; i <= ; i += ) { // Change this line
+  console.log(i);
+} */
+
+// !Решение:
+// const start = 3;
+// const end = 7;
+
+// for (let i = start; i <= end; i += 1) {
+//   console.log(i);
+// }
