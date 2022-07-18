@@ -597,3 +597,131 @@ function getCommonElements(array1, array2) {
 // }
 
 // console.log(getCommonElements([1, 2, 3], [2, 4]));
+
+/* 26. ЦИКЛ FOR...OF
+Выполни рефакторинг кода функции calculateTotalPrice(order) заменив цикл for на for...of.
+
+function calculateTotalPrice(order) {
+  let total = 0;
+  // Change code below this line
+
+  for (let i = 0; i < order.length; i += 1) {
+    total += order[i];
+  }
+
+  // Change code above this line
+  return total;
+} */
+
+// !Решение:
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+//   for (const element of order) {
+//     total += element;
+//   }
+
+//   return total;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+/* 27. ЗАЧАДА: ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ 2.0
+Выполни рефакторинг функции filterArray(numbers, value) заменив цикл for на for...of
+
+function filterArray(numbers, value) {
+  // Change code below this line
+  const filteredNumbers = [];
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    const number = numbers[i];
+
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  }
+
+  return filteredNumbers;
+  // Change code above this line
+} */
+
+// !Решение:
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+
+//   for (const number of numbers) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+
+//   return filteredNumbers;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+
+/* 28. ОПЕРАТОР %
+    Вместо того, чтобы возвращать результат деления, операция по модулю (%) возвращает целочисленный остаток от деления двух чисел - делимого и делителя.
+
+5 % 1 = 0;
+// 5, разделенное на 1, равно 5, а остаток - 0
+
+5 % 2 = 1;
+//  5, разделенное на 2, равно 2, а остаток - 1
+
+5 % 3 = 2;
+//  5, разделенное на 3, равно 1, а остаток - 2
+
+5 % 4 = 1;
+//  5, разделенное на 4, равно 1, а остаток - 1
+
+5 % 5 = 0;
+//  5, разделенное на 5, равно 1, а остаток - 0
+
+Дополни выражения остатка от деления так, чтобы код проходил тесты.
+
+// Change code below this line
+const a = 3 % ;
+const b = 4 % ;
+const c = 11 % ;
+const d = 12 % ;
+const e = 8 % ; */
+
+// !Решение:
+// const a = 3 % 3; // 0
+// const b = 4 % 3; // 1
+// const c = 11 % 4; // 3
+// const d = 12 % 7; // 5
+// const e = 8 % 6; // 2
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+// console.log(e);
+
+/* 29. ЗАДАЧА: ЧЁТНЫЕ ЧИСЛА
+Напиши функцию getEvenNumbers(start, end) которая возвращает массив всех чётных чисел от start до end.Чётным считается число которое делится на 2 без остатка(10 % 2 === 0).
+
+function getEvenNumbers(start, end) {
+   // Change code below this line
+
+
+
+    // Change code above this line
+  } */
+
+// !Решение:
+// function getEvenNumbers(start, end) {
+//   const evenNumbers = [];
+
+//   for (let i = start; i <= end; i += 1) {
+//     if (i % 2 === 0) {
+//       evenNumbers.push(i);
+//     }
+//   }
+
+//   return evenNumbers;
+// }
+
+// console.log(getEvenNumbers(3, 11)); // [4, 6, 8, 10]
