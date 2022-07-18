@@ -506,6 +506,7 @@ function createArrayOfNumbers(min, max) {
   return numbers;
 } */
 
+// !Решение:
 // function createArrayOfNumbers(min, max) {
 //   const numbers = [];
 
@@ -517,3 +518,82 @@ function createArrayOfNumbers(min, max) {
 // }
 
 // console.log(createArrayOfNumbers(1, 10));
+
+/* 23. ЗАДАЧА: ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ
+Напиши функцию filterArray(numbers, value), которая принимает массив чисел(параметр numbers) и возвращает новый массив, в котором будут только те элементы массива numbers, которые больше чем значение параметра value(число).
+
+function filterArray(numbers, value) {
+   // Change code below this line
+
+
+
+  // Change code above this line
+} */
+
+// !Решение:
+// function filterArray(numbers, value) {
+//   const numbersArray = [];
+
+//   for (const number of numbers) {
+//     if (number > value) {
+//       numbersArray.push(number);
+//     }
+//   }
+
+//   return numbersArray;
+// }
+
+// console.log('Result:', filterArray([12, 24, 8, 41, 76], 38));
+
+/* 24. МЕТОД INCLUDES()
+Функция checkFruit(fruit) принимает строку с названием фрукта (параметр fruit), и проверяет есть ли такой фрукт в массиве fruits.
+
+Дополни код функции так, что если:
+
+фрукт есть в массиве, то функция возвращает true;
+фрукта нет в массиве, то функция возвращает false.
+
+function checkFruit(fruit) {
+  const fruits = ["apple", "plum", "pear", "orange"];
+
+  return; // Change this line
+} */
+
+// !Решение:
+// function checkFruit(fruit) {
+//   const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+//   return fruits.includes(fruit);
+// }
+
+// console.log(checkFruit('apple'));
+
+/* 25. ЗАДАЧА: ОБЩИЕ ЭЛЕМЕНТЫ
+Общими элементами массивов называют те элементы, которые присутствуют во всех массивах.
+
+Например, в двух массивах [1, 3, 5] и [0, 8, 5, 3] общими будут числа 3 и 5, т.к. они присутствуют в обоих исходных массивах. А числа 0, 1 и 8 присутствуют только в одном из массивов.
+
+Напиши функцию getCommonElements(array1, array2) которая получает два массива произвольной длины в параметры array1 и array2, и возвращает новый массив, состоящий из тех элементов, которые присутствуют в обоих исходных массивах.
+
+function getCommonElements(array1, array2) {
+  // Change code below this line
+
+
+
+ // Change code above this line
+} */
+
+// !Решение:
+// function getCommonElements(array1, array2) {
+//   const commonArrayElements = [];
+
+//   for (const element of array1) {
+//     if (array2.includes(element)) {
+//       commonArrayElements.push(element);
+//     }
+//   }
+
+//   return commonArrayElements;
+// }
+
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
