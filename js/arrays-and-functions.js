@@ -400,3 +400,120 @@ for (let i = ; i <= ; i += ) { // Change this line
 // for (let i = start; i <= end; i += 1) {
 //   console.log(i);
 // }
+
+/* 18. ЗАДАЧА: СУММА ЧИСЕЛ(ЦИКЛ FOR)
+Напиши функцию calculateTotal(number), которая принимает целое число(параметр number) и возвращает сумму всех целых чисел от единицы и до этого числа.Например, если number равно 3, то сумма это 1 + 2 + 3, то есть 6.
+
+function calculateTotal(number) {
+ // Change code below this line
+
+
+
+  // Change code above this line
+} */
+
+// !Решение:
+// function calculateTotal(number) {
+//   let totalNumber = 0;
+
+//   for (let i = 0; i <= number; i += 1) {
+//     totalNumber += i;
+//   }
+
+//   return totalNumber;
+// }
+
+// console.log(calculateTotal(10));
+
+/* 19. ИТЕРАЦИЯ ПО МАССИВУ
+Дополни код цикла for так, чтобы он последовательно логировал все элементы массива fruits.
+
+const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+for (let i = ;) { // Change this line
+  const fruit = fruits[]; // Change this line
+  console.log(fruit);
+} */
+
+// !Решение:
+// const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+// for (let i = 0; i < fruits.length; i += 1) {
+//   const fruit = fruits[i];
+
+//   console.log(fruit);
+// }
+
+/* 20. ЗАДАЧА: ПОДСЧЁТ СУММЫ ПОКУПКИ
+Напиши функцию calculateTotalPrice(order), которая принимает один параметр order - массив чисел, и рассчитывает общую сумму его элементов.Общая сумма элементов должна сохраняться в переменной total, которая возвращается, как результат работы функции.
+
+function calculateTotalPrice(order) {
+  let total = 0;
+  // Change code below this line
+
+  // Change code above this line
+  return total;
+} */
+
+// !Решение:
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+
+//   return total;
+// }
+
+// console.log(calculateTotalPrice([1, 2, 3]));
+
+/* 21. ЗАДАЧА: ПОИСК САМОГО ДЛИННОГО СЛОВА
+Напиши функцию findLongestWord(string) которая принимает произвольную строку состоящую только из слов разделённых пробелом(параметр string) и возвращает самое длинное слово в этой строке.
+
+function findLongestWord(string) {
+  // Change code below this line
+
+
+
+  // Change code above this line
+} */
+
+// !Решение:
+// function findLongestWord(string) {
+//   const stringToArray = string.split(' ');
+//   let longestWord = stringToArray[0];
+
+//   for (let i = 0; i < stringToArray.length; i += 1) {
+//     if (stringToArray[i].length > longestWord.length) {
+//       longestWord = stringToArray[i];
+//     }
+//   }
+
+//   return longestWord;
+// }
+
+// console.log('Результат возврата:', findLongestWord('this is the longest word'));
+
+/* 22. МЕТОД PUSH()
+Дополни код функции createArrayOfNumbers(min, max) так, чтобы она возвращала массив всех целых чисел от значения min до max.
+
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  // Change code below this line
+
+  // Change code above this line
+  return numbers;
+} */
+
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+
+//   for (let i = min; i <= max; i += 1) {
+//     numbers.push(i);
+//   }
+
+//   return numbers;
+// }
+
+// console.log(createArrayOfNumbers(1, 10));
