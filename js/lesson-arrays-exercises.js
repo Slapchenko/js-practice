@@ -2,27 +2,28 @@
 
 // 1. Створити масив з елементами 'Jazz' и 'Blues'
 const genres = ['Jazz', 'Blues'];
-console.log(genres);
+// console.log(genres);
+
 // 2. Додати 'Rock' в кінець масиву.
 
 genres.push('Rock');
-console.log(genres);
+// console.log(genres);
 
 // 3. Вивести в консоль перший елемент масива (не видаляючи його)
 
-console.log(genres[0]);
+// console.log(genres[0]);
 
 // 4. Вивести в консоль останній элемент масива. Має працювати для будь-якої довжини.
 
-console.log(genres[genres.length - 1]);
+// console.log(genres[genres.length - 1]);
 
 // 5. Видалити з масиву перший елемент і вивести в консоль.
 genres.shift(1);
-console.log(genres);
+// console.log(genres);
 
 //  6. Додати «Country» і «Reggy» в початок масиву (зберегти порядок).
 genres.unshift('Country', 'Reggy');
-console.log(genres);
+// console.log(genres);
 
 //? ## Example 2 - Масиви і строки
 /* 
@@ -34,7 +35,7 @@ console.log(genres);
 const sides = '7 10';
 const stringtoArray = sides.split(' ');
 const areaСalculation = stringtoArray[0] * stringtoArray[1];
-console.log('Area:', areaСalculation);
+// console.log('Area:', areaСalculation);
 
 //TODO ## Example 3 - Перебор масивів, умови
 /*
@@ -54,7 +55,7 @@ for (let i = 0; i < fruits.length; i += 1) {
     continue;
   }
 
-  console.log(`${i + 1}: ${fruits[i]}`);
+  // console.log(`${i + 1}: ${fruits[i]}`);
 }
 
 //? ## Example 4 - Масиви і цикли
@@ -77,7 +78,7 @@ for (let i = 0; i < namesSplittoArray.length; i += 1) {
   const name = namesSplittoArray[i];
   const phone = phonesSplittoArray[i];
 
-  console.log(`Name: ${name}, phone: ${phone}`);
+  // console.log(`Name: ${name}, phone: ${phone}`);
 }
 
 // ? Масиви і строки
@@ -94,7 +95,7 @@ phrasetoArray.pop();
 phrasetoArray.shift();
 const cutPhrase = phrasetoArray.join(' ');
 
-console.log(cutPhrase);
+// console.log(cutPhrase);
 
 //? ## Example 6
 /*
