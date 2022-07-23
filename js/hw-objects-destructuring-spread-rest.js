@@ -282,3 +282,17 @@ const credentials = {
 // }
 
 // console.log(values);
+
+// TODO 14. ЗАДАЧА. ПОДСЧЁТ СВОЙСТВ 2.0
+/* Выполни рефакторинг функции countProps(object) используя метод Object.keys() и, возможно, но необязательно, цикл for...of. */
+
+// function countProps(object) {
+//   let propCount = 0;
+//   const keys = Object.keys(object);
+
+//   propCount = keys.length;
+
+//   return propCount;
+// }
+
+// console.log(countProps({ name: 'Mango', age: 2 }));
