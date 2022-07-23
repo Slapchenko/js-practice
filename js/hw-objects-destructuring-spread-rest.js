@@ -314,15 +314,15 @@ const credentials = {
 // TODO 16. ЗАДАЧА. РАСХОДЫ НА ЗАРПЛАТУ
 /* Напиши функцию countTotalSalary(salaries) которая принимает объект зарплат, где имя свойства это имя сотрудника, а значение свойства это зарплата. Функция должна рассчитать общую сумму зарплат сотрудников и вернуть её. Используй переменную totalSalary для хранения общей суммы зарплаты. */
 
-function countTotalSalary(salaries) {
-  let totalSalary = 0;
-  const salaryList = Object.values(salaries);
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+//   const salaryList = Object.values(salaries);
 
-  for (const salary of salaryList) {
-    totalSalary += salary;
-  }
+//   for (const salary of salaryList) {
+//     totalSalary += salary;
+//   }
 
-  return totalSalary;
-}
+//   return totalSalary;
+// }
 
-console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
