@@ -296,3 +296,17 @@ const credentials = {
 // }
 
 // console.log(countProps({ name: 'Mango', age: 2 }));
+
+// TODO 15. МЕТОД OBJECT.VALUES()
+/* Запиши в переменную keys массив ключей собственных свойств объекта apartment, а в переменную values массив всех значений его свойств. Используй методы Object.keys() и Object.values(). */
+
+// const apartment = {
+//   descr: 'Spacious apartment in the city center',
+//   rating: 4,
+//   price: 2153,
+// };
+
+// const keys = Object.keys(apartment);
+// const values = Object.values(apartment);
+
+// console.log(keys, values);
