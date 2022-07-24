@@ -756,15 +756,31 @@ priority - приоритет задачи.
 // TODO 39. ЗАДАЧА. УДАЛЯЕМ ЗЕЛЬЕ
 // Дополни метод removePotion(potionName) так, чтобы он удалял зелье potionName из массива зелий в свойстве potions.
 
-const atTheOldToad = {
-  potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
 
-  removePotion(potionName) {
-    const indexPotionName = this.potions.indexOf(potionName);
-    this.potions.splice(indexPotionName, 1);
+//   removePotion(potionName) {
+//     const indexPotionName = this.potions.indexOf(potionName);
+//     this.potions.splice(indexPotionName, 1);
 
-    return this.potions;
-  },
-};
+//     return this.potions;
+//   },
+// };
 
-console.log(atTheOldToad.removePotion('Dragon breath'));
+// console.log(atTheOldToad.removePotion('Dragon breath'));
+
+// TODO 40. ЗАДАЧА: ОБНОВЛЯЕМ ЗЕЛЬЕ
+/* Дополни метод updatePotionName(oldName, newName) так, чтобы он обновлял название зелья с oldName на newName, в массиве зелий в свойстве potions. */
+
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+
+//   updatePotionName(oldName, newName) {
+//     const indexOldName = this.potions.indexOf(oldName);
+//     this.potions.splice(indexOldName, 1, newName);
+
+//     return this.potions;
+//   },
+// };
+
+// console.log(atTheOldToad.updatePotionName('Dragon breath', 'Polymorth'));
