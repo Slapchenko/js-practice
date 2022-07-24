@@ -742,13 +742,29 @@ priority - приоритет задачи.
 // TODO 38. ЗАДАЧА: ДОБАВЛЯЕМ НОВОЕ ЗЕЛЬЕ
 /* Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions. */
 
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+
+//   addPotion(potionName) {
+//     this.potions.push(potionName);
+//     return this.potions;
+//   },
+// };
+
+// console.log(atTheOldToad.addPotion('Invisibility'));
+
+// TODO 39. ЗАДАЧА. УДАЛЯЕМ ЗЕЛЬЕ
+// Дополни метод removePotion(potionName) так, чтобы он удалял зелье potionName из массива зелий в свойстве potions.
+
 const atTheOldToad = {
   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
 
-  addPotion(potionName) {
-    this.potions.push(potionName);
+  removePotion(potionName) {
+    const indexPotionName = this.potions.indexOf(potionName);
+    this.potions.splice(indexPotionName, 1);
+
     return this.potions;
   },
 };
 
-console.log(atTheOldToad.addPotion('Invisibility'));
+console.log(atTheOldToad.removePotion('Dragon breath'));
