@@ -546,9 +546,28 @@ city - город, строка "Kingston". */
 // TODO 27. ОПЕРАЦИЯ SPREAD ПРИ ПЕРЕДАЧЕ АРГУМЕНТОВ
 /* В переменной scores хранится массив результатов тестирования. Используя распыление и методы Math.max() и Math.min() дополни код так, чтобы в переменной bestScore был самый высокий балл, а в worstScore самый низкий. */
 
-const scores = [89, 64, 42, 17, 93, 51, 26];
+// const scores = [89, 64, 42, 17, 93, 51, 26];
 
-const bestScore = Math.max(...scores);
-const worstScore = Math.min(...scores);
+// const bestScore = Math.max(...scores);
+// const worstScore = Math.min(...scores);
 
-console.log('BestScore:', bestScore, 'WorstScore:', worstScore);
+// console.log('BestScore:', bestScore, 'WorstScore:', worstScore);
+
+// TODO 28. ОПЕРАЦИЯ SPREAD ПРИ СОЗДАНИИ НОВОГО МАССИВА
+/* В переменных firstGroupScores, secondGroupScores и thirdGroupScores хранятся результаты тестирования отдельных групп. Используя распыление дополни код так, чтобы:
+
+В переменной allScores хранился массив всех результатов от первой до третьей группы.
+В переменной bestScore был самый высокий общий балл.
+В переменной worstScore был самый низкий общий балл. */
+
+const firstGroupScores = [64, 42, 93];
+const secondGroupScores = [89, 14, 51, 26];
+const thirdGroupScores = [29, 47, 18, 97, 81];
+
+const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
+const bestScore = Math.max(...allScores);
+const worstScore = Math.min(...allScores);
+
+console.log(allScores);
+console.log(bestScore);
+console.log(worstScore);
