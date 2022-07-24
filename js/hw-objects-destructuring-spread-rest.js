@@ -704,15 +704,24 @@ priority - приоритет задачи.
 // TODO 35. ДОСТУП К СВОЙСТВАМ ОБЪЕКТА В ЕГО МЕТОДАХ
 /* Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент */
 
-const bookShelf = {
-  books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+// const bookShelf = {
+//   books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
 
-  updateBook(oldName, newName) {
-    const indexOldName = this.books.indexOf(oldName);
-    const newNameApplied = this.books.splice(indexOldName, 1, newName);
+//   updateBook(oldName, newName) {
+//     const indexOldName = this.books.indexOf(oldName);
+//     const newNameApplied = this.books.splice(indexOldName, 1, newName);
 
-    return this.books;
-  },
+//     return this.books;
+//   },
+// };
+
+// console.log(bookShelf.updateBook('Haze', 'Dungeon chronicles'));
+
+// TODO 36. ЗАДАЧА. ЛАВКА ЗЕЛИЙ «У СТАРОЙ ЖАБЫ»
+/* К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий. Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив. */
+
+const atTheOldToad = {
+  potions: [],
 };
 
-console.log(bookShelf.updateBook('Haze', 'Dungeon chronicles'));
+console.log(atTheOldToad);
