@@ -604,20 +604,35 @@ priority - приоритет задачи.
 
 В параметре data гарантированно будет только свойство text, а остальные два, category и priority, могут отсутствовать. Тогда, в новом объекте задачи, в свойствах category и priority должны быть значения по умолчанию, хранящиеся в одноимённых локальных переменных. */
 
-function makeTask(data) {
-  const completed = false;
-  const category = 'General';
-  const priority = 'Normal';
+// function makeTask(data) {
+//   const completed = false;
+//   const category = 'General';
+//   const priority = 'Normal';
 
-  const defObject = {
-    completed,
-    category,
-    priority,
-  };
+//   const defObject = {
+//     completed,
+//     category,
+//     priority,
+//   };
 
-  const newObject = { ...defObject, ...data };
+//   const newObject = { ...defObject, ...data };
 
-  return newObject;
-}
+//   return newObject;
+// }
 
-console.log(makeTask({ category: 'Homemade', priority: 'Low', text: 'Take out the trash' }));
+// console.log(makeTask({ category: 'Homemade', priority: 'Low', text: 'Take out the trash' }));
+
+// TODO 31. ОПЕРАЦИЯ REST ДЛЯ СБОРА ВСЕХ АРГУМЕНТОВ ФУНКЦИИ
+/* Используя операцию rest дополни код функции add() так, чтобы она принимала любое количество аргументов, считала и возвращала их сумму. */
+
+// function add(...args) {
+//   let total = 0;
+
+//   for (const arg of args) {
+//     total += arg;
+//   }
+
+//   return total;
+// }
+
+// console.log(add(15, 27));
