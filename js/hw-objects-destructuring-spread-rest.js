@@ -398,23 +398,38 @@ city - город, строка "Kingston". */
 // TODO 20. ЗАДАЧА. ОБЩАЯ СТОИМОСТЬ ТОВАРА
 /* Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива products. */
 
-const products = [
-  { name: 'Radar', price: 1300, quantity: 4 },
-  { name: 'Scanner', price: 2700, quantity: 3 },
-  { name: 'Droid', price: 400, quantity: 7 },
-  { name: 'Grip', price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: 'Radar', price: 1300, quantity: 4 },
+//   { name: 'Scanner', price: 2700, quantity: 3 },
+//   { name: 'Droid', price: 400, quantity: 7 },
+//   { name: 'Grip', price: 1200, quantity: 9 },
+// ];
 
-function calculateTotalPrice(productName) {
-  let totalPrice = 0;
+// function calculateTotalPrice(productName) {
+//   let totalPrice = 0;
 
-  for (const product of products) {
-    if (productName === product.name) {
-      totalPrice = product.price * product.quantity;
-    }
-  }
+//   for (const product of products) {
+//     if (productName === product.name) {
+//       totalPrice = product.price * product.quantity;
+//     }
+//   }
 
-  return totalPrice;
-}
+//   return totalPrice;
+// }
 
-console.log(calculateTotalPrice('Grip'));
+// console.log(calculateTotalPrice('Grip'));
+
+// TODO 21. ДЕСТРУКТУРИЗАЦИЯ ОБЪЕКТОВ
+/* Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures. */
+
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+
+const { yesterday, today, tomorrow } = highTemperatures;
+
+const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+console.log(meanTemperature);
