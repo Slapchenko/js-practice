@@ -659,16 +659,44 @@ priority - приоритет задачи.
 
 Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив [1, 2], потому что только они есть в массиве первого аргумента. */
 
-function findMatches(array, ...args) {
-  const matches = [];
+// function findMatches(array, ...args) {
+//   const matches = [];
 
-  for (const item of args) {
-    if (array.includes(item)) {
-      matches.push(item);
-    }
-  }
+//   for (const item of args) {
+//     if (array.includes(item)) {
+//       matches.push(item);
+//     }
+//   }
 
-  return matches;
-}
+//   return matches;
+// }
 
-console.log('Result:', findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+// console.log('Result:', findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+
+// TODO 34. МЕТОДЫ ОБЪЕКТА
+/* Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
+
+Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку "Deleting book <имя книги>", где <имя книги> это значение параметра bookName.
+
+Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку "Updating book <старое имя> to <новое имя>", где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно. */
+
+const bookShelf = {
+  books: ['The last kingdom', 'The guardian of dreams'],
+  getBooks() {
+    return 'Returning all books';
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
+  removeBook(bookName) {
+    return `Deleting book ${bookName}`;
+  },
+  updateBook(oldName, newName) {
+    return `Updating book ${oldName} to ${newName}`;
+  },
+};
+
+console.log(bookShelf.getBooks());
+console.log(bookShelf.addBook('Haze'));
+console.log(bookShelf.removeBook('Red sunset'));
+console.log(bookShelf.updateBook('Sands of dune', 'Dune'));
