@@ -636,3 +636,18 @@ priority - приоритет задачи.
 // }
 
 // console.log(add(15, 27));
+
+//TODO 32. ОПЕРАЦИЯ REST ДЛЯ СБОРА ЧАСТИ АРГУМЕНТОВ ФУНКЦИИ
+/* Функция addOverNum() считает сумму всех аргументов. Измени параметры и тело функции addOverNum() так, чтобы она считала сумму только тех аргументов, которые больше чем заданное число. Это число должно быть первым параметром функции. */
+
+function addOverNum(firstNumber, ...args) {
+  let total = 0;
+
+  for (const arg of args) {
+    if (firstNumber < arg) total += arg;
+  }
+
+  return total;
+}
+
+console.log(addOverNum(15, 32, 6, 13, 19, 8));
