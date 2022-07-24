@@ -457,19 +457,37 @@ city - город, строка "Kingston". */
 //TODO 23. ИЗМЕНЕНИЕ ИМЕНИ ПЕРЕМЕННОЙ
 /* Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg". */
 
-const highTemperatures = {
-  yesterday: 28,
-  today: 26,
-  tomorrow: 33,
-};
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
 
-const {
-  yesterday: highYesterday,
-  today: highToday,
-  tomorrow: highTomorrow,
-  icon: highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg',
-} = highTemperatures;
+// const {
+//   yesterday: highYesterday,
+//   today: highToday,
+//   tomorrow: highTomorrow,
+//   icon: highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg',
+// } = highTemperatures;
 
-const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
 
-console.log(meanTemperature);
+// console.log(meanTemperature);
+
+// TODO 24. ДЕСТРУКТУРИЗАЦИЯ В ЦИКЛАХ
+/* Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта.. */
+
+// const colors = [
+//   { hex: '#f44336', rgb: '244,67,54' },
+//   { hex: '#2196f3', rgb: '33,150,243' },
+//   { hex: '#4caf50', rgb: '76,175,80' },
+//   { hex: '#ffeb3b', rgb: '255,235,59' },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+
+// for (const { hex, rgb } of colors) {
+//   hexColors.push(hex);
+//   rgbColors.push(rgb);
+// }
