@@ -680,23 +680,39 @@ priority - приоритет задачи.
 
 Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку "Updating book <старое имя> to <новое имя>", где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно. */
 
+// const bookShelf = {
+//   books: ['The last kingdom', 'The guardian of dreams'],
+//   getBooks() {
+//     return 'Returning all books';
+//   },
+//   addBook(bookName) {
+//     return `Adding book ${bookName}`;
+//   },
+//   removeBook(bookName) {
+//     return `Deleting book ${bookName}`;
+//   },
+//   updateBook(oldName, newName) {
+//     return `Updating book ${oldName} to ${newName}`;
+//   },
+// };
+
+// console.log(bookShelf.getBooks());
+// console.log(bookShelf.addBook('Haze'));
+// console.log(bookShelf.removeBook('Red sunset'));
+// console.log(bookShelf.updateBook('Sands of dune', 'Dune'));
+
+// TODO 35. ДОСТУП К СВОЙСТВАМ ОБЪЕКТА В ЕГО МЕТОДАХ
+/* Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент */
+
 const bookShelf = {
-  books: ['The last kingdom', 'The guardian of dreams'],
-  getBooks() {
-    return 'Returning all books';
-  },
-  addBook(bookName) {
-    return `Adding book ${bookName}`;
-  },
-  removeBook(bookName) {
-    return `Deleting book ${bookName}`;
-  },
+  books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+
   updateBook(oldName, newName) {
-    return `Updating book ${oldName} to ${newName}`;
+    const indexOldName = this.books.indexOf(oldName);
+    const newNameApplied = this.books.splice(indexOldName, 1, newName);
+
+    return this.books;
   },
 };
 
-console.log(bookShelf.getBooks());
-console.log(bookShelf.addBook('Haze'));
-console.log(bookShelf.removeBook('Red sunset'));
-console.log(bookShelf.updateBook('Sands of dune', 'Dune'));
+console.log(bookShelf.updateBook('Haze', 'Dungeon chronicles'));
