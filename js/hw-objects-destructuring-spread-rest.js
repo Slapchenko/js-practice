@@ -729,12 +729,26 @@ priority - приоритет задачи.
 // TODO 37. ЗАДАЧА. ПОЛУЧАЕМ ВСЕ ЗЕЛЬЯ
 /* Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions. */
 
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+
+//   getPotions() {
+//     return this.potions;
+//   },
+// };
+
+// console.log(atTheOldToad.getPotions());
+
+// TODO 38. ЗАДАЧА: ДОБАВЛЯЕМ НОВОЕ ЗЕЛЬЕ
+/* Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions. */
+
 const atTheOldToad = {
   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
 
-  getPotions() {
+  addPotion(potionName) {
+    this.potions.push(potionName);
     return this.potions;
   },
 };
 
-console.log(atTheOldToad.getPotions());
+console.log(atTheOldToad.addPotion('Invisibility'));
