@@ -560,14 +560,36 @@ city - город, строка "Kingston". */
 В переменной bestScore был самый высокий общий балл.
 В переменной worstScore был самый низкий общий балл. */
 
-const firstGroupScores = [64, 42, 93];
-const secondGroupScores = [89, 14, 51, 26];
-const thirdGroupScores = [29, 47, 18, 97, 81];
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
 
-const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
-const bestScore = Math.max(...allScores);
-const worstScore = Math.min(...allScores);
+// const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
 
-console.log(allScores);
-console.log(bestScore);
-console.log(worstScore);
+// console.log(allScores);
+// console.log(bestScore);
+// console.log(worstScore);
+
+// TODO 29. ОПЕРАЦИЯ SPREAD ПРИ СОЗДАНИИ НОВОГО ОБЪЕКТА
+/* В конструкторе можно создавать новые тесты, для которых есть настройки по умолчанию которые хранятся в переменной defaultSettings. Во время создания теста, все или часть настроек можно переопределить, они хранятся в переменной overrideSettings.
+
+Для того чтобы получить финальные настройки теста, необходимо взять настройки по умолчанию и поверх них применить переопределённые настройки. Дополни код так, чтобы в переменной finalSettings получился объект финальных настроек теста. */
+
+const defaultSettings = {
+  theme: 'light',
+  public: true,
+  withPassword: false,
+  minNumberOfQuestions: 10,
+  timePerQuestion: 60,
+};
+const overrideSettings = {
+  public: false,
+  withPassword: true,
+  timePerQuestion: 30,
+};
+
+const finalSettings = { ...defaultSettings, ...overrideSettings };
+
+console.log(finalSettings);
