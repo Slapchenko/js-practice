@@ -720,8 +720,21 @@ priority - приоритет задачи.
 // TODO 36. ЗАДАЧА. ЛАВКА ЗЕЛИЙ «У СТАРОЙ ЖАБЫ»
 /* К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий. Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив. */
 
+// const atTheOldToad = {
+//   potions: [],
+// };
+
+// console.log(atTheOldToad);
+
+// TODO 37. ЗАДАЧА. ПОЛУЧАЕМ ВСЕ ЗЕЛЬЯ
+/* Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions. */
+
 const atTheOldToad = {
-  potions: [],
+  potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+
+  getPotions() {
+    return this.potions;
+  },
 };
 
-console.log(atTheOldToad);
+console.log(atTheOldToad.getPotions());
