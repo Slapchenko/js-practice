@@ -530,16 +530,25 @@ city - город, строка "Kingston". */
 }
 Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast. */
 
-// Change code below this line
-function calculateMeanTemperature(forecast) {
-  const {
-    today: { low: todayLow, high: todayHigh },
-    tomorrow: { low: tomorrowLow, high: tomorrowHigh },
-  } = forecast;
+// function calculateMeanTemperature(forecast) {
+//   const {
+//     today: { low: todayLow, high: todayHigh },
+//     tomorrow: { low: tomorrowLow, high: tomorrowHigh },
+//   } = forecast;
 
-  return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
-}
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
 
-console.log(
-  calculateMeanTemperature({ today: { low: 37, high: 40 }, tomorrow: { low: 33, high: 38 } })
-);
+// console.log(
+//   calculateMeanTemperature({ today: { low: 37, high: 40 }, tomorrow: { low: 33, high: 38 } })
+// );
+
+// TODO 27. ОПЕРАЦИЯ SPREAD ПРИ ПЕРЕДАЧЕ АРГУМЕНТОВ
+/* В переменной scores хранится массив результатов тестирования. Используя распыление и методы Math.max() и Math.min() дополни код так, чтобы в переменной bestScore был самый высокий балл, а в worstScore самый низкий. */
+
+const scores = [89, 64, 42, 17, 93, 51, 26];
+
+const bestScore = Math.max(...scores);
+const worstScore = Math.min(...scores);
+
+console.log('BestScore:', bestScore, 'WorstScore:', worstScore);
