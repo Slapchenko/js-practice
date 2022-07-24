@@ -640,14 +640,35 @@ priority - приоритет задачи.
 //TODO 32. ОПЕРАЦИЯ REST ДЛЯ СБОРА ЧАСТИ АРГУМЕНТОВ ФУНКЦИИ
 /* Функция addOverNum() считает сумму всех аргументов. Измени параметры и тело функции addOverNum() так, чтобы она считала сумму только тех аргументов, которые больше чем заданное число. Это число должно быть первым параметром функции. */
 
-function addOverNum(firstNumber, ...args) {
-  let total = 0;
+// function addOverNum(firstNumber, ...args) {
+//   let total = 0;
 
-  for (const arg of args) {
-    if (firstNumber < arg) total += arg;
+//   for (const arg of args) {
+//     if (firstNumber < arg) total += arg;
+//   }
+
+//   return total;
+// }
+
+// console.log(addOverNum(15, 32, 6, 13, 19, 8));
+
+// TODO 33. ЗАДАЧА. МАССИВ СОВПАДЕНИЙ
+/* Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
+
+Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
+
+Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив [1, 2], потому что только они есть в массиве первого аргумента. */
+
+function findMatches(array, ...args) {
+  const matches = [];
+
+  for (const item of args) {
+    if (array.includes(item)) {
+      matches.push(item);
+    }
   }
 
-  return total;
+  return matches;
 }
 
-console.log(addOverNum(15, 32, 6, 13, 19, 8));
+console.log('Result:', findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
