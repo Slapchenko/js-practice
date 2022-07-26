@@ -95,7 +95,7 @@ phrasetoArray.pop();
 phrasetoArray.shift();
 const cutPhrase = phrasetoArray.join(' ');
 
-// console.log(cutPhrase);
+console.log(cutPhrase);
 
 //? ## Example 6
 /*
