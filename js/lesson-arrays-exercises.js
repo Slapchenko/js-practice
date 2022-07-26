@@ -89,13 +89,13 @@ for (let i = 0; i < namesSplittoArray.length; i += 1) {
 Скрипт має працювати для будь-якої строки.
 */
 
-const phrase = 'Welcome to the bright future';
-const phrasetoArray = phrase.split(' ');
-phrasetoArray.pop();
-phrasetoArray.shift();
-const cutPhrase = phrasetoArray.join(' ');
+// const phrase = 'Welcome to the bright future';
+// const phrasetoArray = phrase.split(' ');
+// phrasetoArray.pop();
+// phrasetoArray.shift();
+// const cutPhrase = phrasetoArray.join(' ');
 
-console.log(cutPhrase);
+// console.log(cutPhrase);
 
 //? ## Example 6
 /*
@@ -103,14 +103,57 @@ console.log(cutPhrase);
 Три варіанти - цикл for (без масивів), цикл for-of + масиви, без циклів?
 */
 
-// const anotherPhrase = 'Welcome to the future';
+// v1 цикл for (без масивів)
+// const phrase = 'Welcome to the future';
+// let reversed = '';
+
+// for (let i = phrase.length - 1; i >= 0; i--) {
+//   const item = phrase.charAt(i);
+
+//   reversed += item;
+// }
+
+// console.log(reversed);
+
+// v2 for-of + масиви
+// const phrase = 'Welcome to the future';
+// const chars = phrase.split('');
+// const reversedArray = [];
+
+// for (let item of chars) {
+//   reversedArray.unshift(item);
+// }
+
+// const reversed = reversedArray.join('');
+
+// console.log('reversed:', reversed);
+
+// v3 - reverse!
+// const chars = phrase.split('');
+// const reversed = chars.reverse().join('');
+
+// console.log('reversed:', reversed);
 
 //? ## Example 7 - Пошук елемента
 /*
 Написати скрипт пошуку найменшого числа в массиве. Чи є варіанти?
 */
 
+//v1
 // const numbers = [2, 17, 94, 1, 23, 37];
+// const test = Math.min(...numbers);
+
+//v2
+// const numbers = [2, 17, 94, 1, 23, 37];
+// let minNumber = numbers[0];
+
+// for (let i = 0; i < numbers.length; i += 1) {
+//   if (numbers[i] < minNumber) {
+//     minNumber = numbers[i];
+//   }
+// }
+
+// console.log('minNumber', minNumber);
 
 //? ## Example 8 - Сортування масива с циклом
 /*
