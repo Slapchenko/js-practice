@@ -159,5 +159,43 @@ for (let i = 0; i < namesSplittoArray.length; i += 1) {
 /*
 Написати скрипт сортування масиву строк в алфавітному порядку.
 */
-
+// v1
 // const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby', 'ada'];
+
+// let sortedLangs = langs.sort();
+
+// console.table('SortedLangs:', sortedLangs);
+
+//v2
+/* const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby', 'ada'];
+let isSorted;
+
+do {
+  console.log('-------- next iteration WHILE');
+  isSorted = true; // приймемо, що масив ПОТЕНЦІЙНО сортований
+
+  // але ми не можемо гарантувати це, тому
+  // все одно маємо пробігтись хоч один раз по ньому і перевірити:
+  for (let i = 0; i < langs.length - 1; i++) {
+    console.log(langs);
+
+    const current = langs[i];
+    const next = langs[i + 1];
+
+    const isNotSorted = current > next;
+    console.log(`comparing: ${current} > ${next}`, isNotSorted);
+
+    // порівняння строк - по порядку символа в таблиці юнікода (по алфавіту, здебільшого)
+    if (isNotSorted) {
+      console.log('swapping!');
+      langs[i] = next;
+      langs[i + 1] = current;
+
+      // якщо ми щось міняли - ставимо мітку, бо немає гарантій що масив ЗАРАЗ вже повністю сортований
+      // і тому нам знадобиться ще хочаб один прогін do-while, щоб перевірити чи все ОК тепер
+      isSorted = false;
+    }
+  }
+} while (!isSorted); // якщо isSorted в кінці цикла WHILE залишається TRUE - масив відсортовано, цикл завершується
+
+console.log('SORTED!', langs); */
