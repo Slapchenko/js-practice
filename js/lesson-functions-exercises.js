@@ -92,25 +92,25 @@
 і повертає їх середнє значення. Всі аругменти - тільки числа.
 */
 
-function getAverage(...args) {
-  if (args.length === 0) {
-    console.warn('no arguments set');
-    return null;
-  }
+// function getAverage(...args) {
+//   if (args.length === 0) {
+//     console.warn('no arguments set');
+//     return null;
+//   }
 
-  let total = 0;
+//   let total = 0;
 
-  for (let i = 0; i < args.length; i += 1) {
-    total += args[i];
-  }
+//   for (let i = 0; i < args.length; i += 1) {
+//     total += args[i];
+//   }
 
-  return total / args.length;
-}
+//   return total / args.length;
+// }
 
 // console.log(getAverage(1, 2, 3, 4)); // 2.5
 // console.log(getAverage(14, 8, 2)); // 8
 // console.log(getAverage(27, 43, 2, 8, 36)); // 23.2
-console.log(getAverage()); // ???
+// console.log(getAverage()); // ???
 
 //? ## Example 5 - обчислення індексу маси тіла (BMI body mass index)
 /*
@@ -124,10 +124,17 @@ console.log(getAverage()); // ???
 Індекс маси необхідно округлити до однієї цифри після коми (до десятих)
 */
 
-function calcBMI(weight = '', height = '') {}
+function calcBMI(weight = '', height = '') {
+  const normalizWeight = weight.replaceAll(',', '.');
+  const normalizHeight = height.replaceAll(',', '.');
+  const squaringHeight = normalizHeight * normalizHeight;
+  const calcBMI = Number(normalizWeight) / Number(squaringHeight);
+
+  return calcBMI.toFixed(1);
+}
 
 const bmi = calcBMI('88,3', '1.75');
-// console.log('bmi', bmi); // 28.8
+console.log('bmi', bmi); // 28.8
 
 //? ## Example 6 - Коллекция курсов (includes, indexOf, push и т. д.)
 /*
