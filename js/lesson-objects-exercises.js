@@ -7,26 +7,26 @@ const user = {
   hobby: 'swimming',
   isPremium: true,
 };
-console.log(user);
+// console.log(user);
 
 // - додасть нову властивість `mood` із значенням 'happy'
 user.mood = 'happy';
-console.log(user);
+// console.log(user);
 
 // - замінить значення `hobby` на 'birdwatching'
 user.hobby = 'birdwatching';
-console.log(user);
+// console.log(user);
 
 // - замінить значення `premium` на 'false'
 user.isPremium = false;
-console.log(user);
+// console.log(user);
 
 // - виведе все що знаходиться всередині `user` в форматі `ключ:значення`
 //   використовуючи `Object.keys()` + цикл `for...of`
 const keys = Object.keys(user);
 
 for (const key of keys) {
-  console.log(`${key}: ${user[key]}`);
+  //   console.log(`${key}: ${user[key]}`);
 }
 
 // - написати функцію яка буде додавати до об'єкта `user` передану в аргументах властивість та її значення
@@ -36,12 +36,12 @@ function addUserKey(newKeyName, newKeyValue) {
   return user;
 }
 
-console.log(addUserKey('country', 'US'));
+// console.log(addUserKey('country', 'US'));
 
 // видалити ключ hobby із об'єкта
 
 delete user.hobby;
-console.log(user);
+// console.log(user);
 
 //? ## Example 1
 /*
@@ -55,6 +55,19 @@ const order = {
   oilChange: 450,
   tyreRepair: 235,
 };
+
+function getOrdertotal(order) {
+  const prices = Object.values(order);
+  let total = 0;
+
+  for (const price of prices) {
+    total += price;
+  }
+
+  return total;
+}
+
+console.log('total:', getOrdertotal(order));
 
 //? ## Example 2 - Масив об'єктів
 /*
