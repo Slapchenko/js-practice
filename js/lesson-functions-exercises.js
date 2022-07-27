@@ -44,10 +44,17 @@
 Значення гарантовано розділені пробілом.
 */
 
-function getRectangleArea(sizes) {}
+function getRectangleArea(sizes) {
+  const arrayofSizes = sizes.split(' ');
+  const sideA = arrayofSizes[0];
+  const sideB = arrayofSizes[1];
+  const calculatedArea = sideA * sideB;
+
+  return calculatedArea;
+}
 
 const area = getRectangleArea('8 11');
-// console.log(`Rect area is ${area}`);
+console.log(`Rect area is ${area}`);
 
 //? ## Example 2 - Найменше з чисел
 
