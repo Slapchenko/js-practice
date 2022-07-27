@@ -92,12 +92,25 @@
 і повертає їх середнє значення. Всі аругменти - тільки числа.
 */
 
-function getAverage() {}
+function getAverage(...args) {
+  if (args.length === 0) {
+    console.warn('no arguments set');
+    return null;
+  }
+
+  let total = 0;
+
+  for (let i = 0; i < args.length; i += 1) {
+    total += args[i];
+  }
+
+  return total / args.length;
+}
 
 // console.log(getAverage(1, 2, 3, 4)); // 2.5
 // console.log(getAverage(14, 8, 2)); // 8
 // console.log(getAverage(27, 43, 2, 8, 36)); // 23.2
-// console.log(getAverage()); // ???
+console.log(getAverage()); // ???
 
 //? ## Example 5 - обчислення індексу маси тіла (BMI body mass index)
 /*
