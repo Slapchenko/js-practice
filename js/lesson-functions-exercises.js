@@ -124,17 +124,17 @@
 Індекс маси необхідно округлити до однієї цифри після коми (до десятих)
 */
 
-function calcBMI(weight = '', height = '') {
-  const normalizWeight = weight.replaceAll(',', '.');
-  const normalizHeight = height.replaceAll(',', '.');
-  const squaringHeight = normalizHeight * normalizHeight;
-  const calcBMI = Number(normalizWeight) / Number(squaringHeight);
+// function calcBMI(weight = '', height = '') {
+//   const normalizWeight = weight.replaceAll(',', '.');
+//   const normalizHeight = height.replaceAll(',', '.');
+//   const squaringHeight = normalizHeight * normalizHeight;
+//   const calcBMI = Number(normalizWeight) / Number(squaringHeight);
 
-  return calcBMI.toFixed(1);
-}
+//   return calcBMI.toFixed(1);
+// }
 
-const bmi = calcBMI('88,3', '1.75');
-console.log('bmi', bmi); // 28.8
+// const bmi = calcBMI('88,3', '1.75');
+// console.log('bmi', bmi); // 28.8
 
 //? ## Example 6 - Коллекция курсов (includes, indexOf, push и т. д.)
 /*
@@ -149,35 +149,54 @@ const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 
 // 1 - addCourse
 function addCourse(courseName = '') {
-  // ?
+  for (const course of courses) {
+    if (course === courseName) {
+      console.warn(`${courseName} - Такий курс вже існує`);
+      return courses;
+    }
+  }
+  courses.push(courseName);
+  return courses;
 }
 
-// console.log('--- addCourse');
-addCourse('Express');
-
-// console.log(courses);
-// має вивести ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+console.log('--- addCourse', addCourse('Express'));
+// ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
 
 addCourse('CSS'); // має вивести ворнінг 'Такий курс вже існує'
 
 // 2 - removeCourse
-// console.log('--- removeCourse');
+console.log('--- removeCourse');
 function removeCourse(courseName = '') {
-  // ?
+  for (let i = 0; i < courses.length; i += 1) {
+    if (courses[i] === courseName) {
+      courses.splice(i, 1);
+      return courses;
+    }
+  }
+
+  console.warn(`Курс з назвою ${courseName} не знайдено`);
+  return courses;
 }
 
-removeCourse('React');
-// console.log(courses);
-// ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+console.log(removeCourse('React'));
+//['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express'];
 
 removeCourse('Vue'); // ворнінг 'Курс з назвою %назва_курсу% не знайдено'
 
 // 3 - updateCourse
-// console.log('--- updateCourse');
+console.log('--- updateCourse');
 function updateCourse(oldName = '', newName = '') {
-  // ?
+  for (let i = 0; i < courses.length; i += 1) {
+    if (courses[i] === oldName) {
+      courses.splice(i, 1, newName);
+      return courses;
+    }
+  }
+
+  console.warn(`Курс з назвою ${courseName} не знайдено`);
+  return courses;
 }
 
 updateCourse('Express', 'NestJS');
-// console.log(courses);
+console.log(courses);
 ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS'];
