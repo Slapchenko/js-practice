@@ -44,23 +44,27 @@
 Значення гарантовано розділені пробілом.
 */
 
-function getRectangleArea(sizes) {
-  const arrayofSizes = sizes.split(' ');
-  const sideA = arrayofSizes[0];
-  const sideB = arrayofSizes[1];
-  const calculatedArea = sideA * sideB;
+// function getRectangleArea(sizes) {
+//   const arrayofSizes = sizes.split(' ');
+//   const sideA = arrayofSizes[0];
+//   const sideB = arrayofSizes[1];
+//   const calculatedArea = sideA * sideB;
 
-  return calculatedArea;
-}
+//   return calculatedArea;
+// }
 
-const area = getRectangleArea('8 11');
-console.log(`Rect area is ${area}`);
+// const area = getRectangleArea('8 11');
+// console.log(`Rect area is ${area}`);
 
 //? ## Example 2 - Найменше з чисел
 
 // Написати функцію `min(a, b)`, яка повертає найменше з чисел `a` и `b`.
 
-function min(a, b) {}
+// function min(a, b) {
+//   const minNumber = Math.min(a, b);
+
+//   return minNumber;
+// }
 
 // console.log(min(1.5, 5)); // 2
 // console.log(min(3, -1)); // -1
@@ -73,10 +77,14 @@ function min(a, b) {}
 із переданого масиву.
 */
 
-function findLargestNumber(numbers = []) {}
+// function findLargestNumber(numbers = []) {
+//   const maxNumber = Math.max(...numbers);
 
-// console.warn(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
-// console.warn(findLargestNumber([49, 4, 7, 83, 12])); // 83
+//   return maxNumber;
+// }
+
+// console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
+// console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83
 
 //? ## Example 4 - Середнє значення
 /*
