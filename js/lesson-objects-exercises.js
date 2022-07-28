@@ -67,7 +67,7 @@ function getOrdertotal(order) {
   return total;
 }
 
-console.log('total:', getOrdertotal(order));
+// console.log('total:', getOrdertotal(order));
 
 //? ## Example 2 - Масив об'єктів
 /*
@@ -85,7 +85,54 @@ console.log('total:', getOrdertotal(order));
  * @param {Object[]} storage посилання на масив "склада"
  * @param {string} stoneName назва каменя який будемо шукати (e.g. 'Emerald')
  */
-function getPriceOfStones(storage, stoneName) {}
+function getPriceOfStones(storage, stoneName) {
+  let totalPrice = null;
+
+  for (const snone of storage) {
+    if (snone.name === stoneName && snone.quantity !== 0) {
+      totalPrice = snone.price * snone.quantity;
+      return totalPrice;
+    } else if (snone.name === stoneName && snone.quantity === 0) {
+      totalPrice = 0;
+      console.warn(`${stoneName}: product is out of stock`);
+      return totalPrice;
+    }
+  }
+
+  console.warn(`${stoneName}: not found in storage`);
+  return totalPrice;
+}
+
+// v2
+// function getPriceOfStones(storage, stoneName) {
+//   // 1. знайти потрібний товар
+//   let ourStone = null;
+
+//   for (const item of storage) {
+//     if (item.name === stoneName) {
+//       ourStone = item;
+//       break; // знайшли потрібне - зупиняємо цикл, бо сенсу далі йти нема
+//     }
+//   }
+
+//   if (!ourStone) {
+//     // товар НЕ знайдено
+//     console.error('Not found');
+//     return null;
+//   }
+
+//   console.log('ourStone', ourStone);
+
+//   // 2. підрахувати загальну вартість
+//   const totalPrice = ourStone.price * ourStone.quantity;
+
+//   if (!totalPrice) {
+//     // товар є, але закінчився
+//     console.warn('Not enough stones');
+//   }
+
+//   return totalPrice;
+// }
 
 // це наш склад дорогоцінних каменів (на ювелирному заводі, чи іще де)
 const storageContent = [
@@ -94,6 +141,8 @@ const storageContent = [
   { name: 'Sapphire', price: 900, quantity: 7 },
   { name: 'Pearl', price: 200, quantity: 0 },
 ];
+
+// console.log('Result:', getPriceOfStones(storageContent, 'test'));
 
 //? ## Example 3 - Комплексні задачі. STEREO Bank :)
 /*
