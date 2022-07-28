@@ -174,7 +174,9 @@ const account = {
    * Повертає поточний стан балансу
    * @returns { number }
    */
-  getBalance() {},
+  getBalance() {
+    return this.balance;
+  },
 
   /**
    * Створює і повертає нову транзацію за заданим типом і сумою
@@ -184,14 +186,28 @@ const account = {
    *
    * @returns { { id: number, amount: number, type: string } }
    */
-  createTransaction(amount, type) {},
+  createTransaction(amount, type) {
+    // порядок ключів в об'єкті не важливий впринципі, але є два підходи:
+    // 1. ключі по алфавіту
+    // 2. ключі по ступеню важливості (як тут у нас)
+    return {
+      id: Math.round(Date.now() * Math.random()),
+      type, // скорочений синтаксис від (type: type)
+      amount,
+    };
+  },
 
   /**
    * Додає суму на баланс.
    * Створює запис в історії транзакцій (викликає для цього createTransaction)
    * @param {number} amount сума яка буде додана на баланс
    */
-  deposit(amount) {},
+  deposit(amount) {
+    const transaction = this.createTransaction(amount, TRANSACTIONS.DEPOSIT);
+    this.transactions.push(transaction);
+
+    this.balance += amount;
+  },
 
   /**
    * Знімає суму з баланса.
@@ -201,7 +217,18 @@ const account = {
    * @param {number} amount сума яка буде знята з балансу
    * @returns { number | null }
    */
-  withdraw(amount) {},
+  withdraw(amount) {
+    if (amount > this.balance) {
+      // якщо запрошена сума більше баланса - транзакція не відбудеться
+      console.warn('Недостатньо грошей');
+      return null;
+    }
+
+    const transaction = this.createTransaction(amount, TRANSACTIONS.WITHDRAW);
+    this.transactions.push(transaction);
+
+    this.balance -= amount;
+  },
 
   /**
    * Шукає транзакцію по заданому id.
@@ -209,12 +236,64 @@ const account = {
    * @param {number} id id транзакції
    * @returns { Object }
    */
-  getTransactionDetails(id) {},
+  getTransactionDetails(id) {
+    let foundTransaction = null;
+
+    for (const tr of this.transactions) {
+      if (tr.id === id) {
+        foundTransaction = tr;
+        break;
+      }
+    }
+
+    return foundTransaction;
+  },
 
   /**
    * Повертає загальну суму транзакцій даного типу в історії
    * @param { string } type
    * @returns { number }
    */
-  getTransactionTotalByType(type) {},
+  getTransactionTotalByType(type) {
+    let total = 0;
+
+    // шукаємо всі транзакції з заданим типом і додаємо звідти amount в наш total
+    for (const tr of this.transactions) {
+      if (tr.type === type) {
+        total += tr.amount;
+      }
+    }
+
+    return total;
+  },
 };
+
+// test
+console.log('1. getBalance:', account.getBalance());
+
+account.deposit(1000);
+console.log('2. getBalance + 1000:', account.getBalance());
+
+account.withdraw(500);
+console.log('3. getBalance - 500:', account.getBalance());
+
+account.withdraw(100);
+console.log('3. getBalance - 100:', account.getBalance());
+
+console.log('4. transactions:', account.transactions);
+
+// id щоразу випадкові, тому дістанемо якийсь вже існуючий айдішник
+// і пошукаємо його, зробивши вигляд що ми НЕ ЗНАЄМО що він там точно є :)
+const transactionId = account.transactions[1].id;
+console.log(
+  `5. transaction with id ${transactionId}`,
+  account.getTransactionDetails(transactionId)
+);
+
+console.log(
+  `6. total for type ${TRANSACTIONS.WITHDRAW}:`,
+  account.getTransactionTotalByType(TRANSACTIONS.WITHDRAW)
+);
+
+// спроба залізти в кредит, коли кредитного ліміту нема
+console.log('big withdraw', account.withdraw(5500));
