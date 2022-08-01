@@ -163,3 +163,16 @@
 // const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
 
 // console.log(calculateTotalPrice(5, 100));
+
+// TODO 10. СТРЕЛОЧНЫЕ ФУНКЦИИ КАК КОЛЛБЕКИ
+/* Выполни рефакторинг функции calculateTotalPrice(orderedItems) заменив её объявление на стрелочную функцию. Замени коллбек-функцию передаваемую в метод forEach() на стрелочную функцию. */
+
+const calculateTotalPrice = orderedItems => {
+  let totalPrice = 0;
+
+  orderedItems.forEach(item => (totalPrice += item));
+
+  return totalPrice;
+};
+
+console.log(calculateTotalPrice([12, 85, 37, 4])); // 138
