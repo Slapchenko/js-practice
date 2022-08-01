@@ -216,14 +216,23 @@
 
 Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла массив чисел numbers, а создавала, наполняла и возвращала новый массив с обновлёнными значениями. */
 
-function changeEven(numbers, value) {
-  let evenNumbers = [];
+// function changeEven(numbers, value) {
+//   let evenNumbers = [];
 
-  for (let i = 0; i < numbers.length; i += 1) {
-    numbers[i] % 2 === 0 ? evenNumbers.push(numbers[i] + value) : evenNumbers.push(numbers[i]);
-  }
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     numbers[i] % 2 === 0 ? evenNumbers.push(numbers[i] + value) : evenNumbers.push(numbers[i]);
+//   }
 
-  return evenNumbers;
-}
+//   return evenNumbers;
+// }
 
-console.log(changeEven([1, 2, 3, 4, 5], 10)); // [1, 12, 3, 14, 5]
+// console.log(changeEven([1, 2, 3, 4, 5], 10)); // [1, 12, 3, 14, 5]
+
+// TODO 14. МЕТОД MAP()
+/* Дополни код так, чтобы в переменной planetsLengths получился массив длин названий планет. Обязательно используй метод map(). */
+
+const planets = ['Earth', 'Mars', 'Venus', 'Jupiter'];
+const planetsLengths = planets.map(element => element.length);
+
+console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
+console.log(planetsLengths); // [5, 4, 5, 7]
