@@ -56,35 +56,57 @@
 Если в свойстве pizzas есть пицца с названием из параметра pizzaName, метод order должен возвращать результат вызова колбэка onSuccess, передавая ему аргументом имя заказанной пиццы.
 После объявления объекта pizzaPalace мы добавили колбэки и вызовы методов. Пожалуйста ничего там не меняй. */
 
-const pizzaPalace = {
-  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
-  order(pizzaName, makePizza, onOrderError) {
-    if (!this.pizzas.includes(pizzaName)) {
-      return onOrderError(`There is no pizza with a name ${pizzaName} in the assortment.`);
-    }
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, makePizza, onOrderError) {
+//     if (!this.pizzas.includes(pizzaName)) {
+//       return onOrderError(`There is no pizza with a name ${pizzaName} in the assortment.`);
+//     }
 
-    return makePizza(pizzaName);
-  },
-};
-// Change code above this line
+//     return makePizza(pizzaName);
+//   },
+// };
 
-// Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
-}
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
 
-// Callback for onError
-function onOrderError(error) {
-  return `Error! ${error}`;
-}
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
 
-// Method calls with callbacks
-pizzaPalace.order('Smoked', makePizza, onOrderError);
-pizzaPalace.order('Four meats', makePizza, onOrderError);
-pizzaPalace.order('Big Mike', makePizza, onOrderError);
-pizzaPalace.order('Vienna', makePizza, onOrderError);
+// // Method calls with callbacks
+// pizzaPalace.order('Smoked', makePizza, onOrderError);
+// pizzaPalace.order('Four meats', makePizza, onOrderError);
+// pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// pizzaPalace.order('Vienna', makePizza, onOrderError);
 
-console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
-console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
-console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
-console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+
+// TODO 5. МЕТОД FOREACH(CALLBACK)
+/* Функция calculateTotalPrice(orderedItems) принимает один параметр orderedItems - массив чисел, и рассчитывает общую сумму его элементов, которая сохраняется в переменной totalPrice и возвращается как результат работы функции.
+
+Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach. */
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   // v1
+//   orderedItems.forEach(number => {
+//     totalPrice += number;
+//   });
+
+//   // v2
+//   //   orderedItems.forEach(function (number) {
+//   //     totalPrice += number;
+//   //   });
+
+//   return totalPrice;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4])); //138
