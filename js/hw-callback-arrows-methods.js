@@ -180,16 +180,34 @@
 //  TODO 11. ЗАДАЧА. ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ 2.0
 /* Замени объявление функции filterArray() и коллбек для метода forEach() на стрелочные функции. */
 
-const filterArray = (numbers, value) => {
-  const filteredNumbers = [];
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
 
-  numbers.forEach(number => {
-    if (number > value) {
-      filteredNumbers.push(number);
+//   numbers.forEach(number => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+
+//   return filteredNumbers;
+// };
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+
+// TODO 12. ЗАДАЧА. ОБЩИЕ ЭЛЕМЕНТЫ 2.0
+/* Замени объявление функции getCommonElements() и коллбек для метода forEach() на стрелочные функции. */
+
+// Change code below this line
+const getCommonElements = (firstArray, secondArray) => {
+  const commonElements = [];
+
+  firstArray.forEach(element => {
+    if (secondArray.includes(element)) {
+      commonElements.push(element);
     }
   });
 
-  return filteredNumbers;
+  return commonElements;
 };
 
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // [1, 2]
