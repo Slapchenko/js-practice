@@ -467,10 +467,40 @@
 // TODO 19. МЕТОДЫ FILTER И FIND
 /* Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных. Обязательно используй метод filter(). */
 
-const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
 
-const evenNumbers = numbers.filter(number => number % 2 === 0);
-const oddNumbers = numbers.filter(number => number % 2 !== 0);
+// const evenNumbers = numbers.filter(number => number % 2 === 0);
+// const oddNumbers = numbers.filter(number => number % 2 !== 0);
 
-console.log(evenNumbers);
-console.log(oddNumbers);
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+
+// TODO 20. ФИЛЬТРАЦИЯ УНИКАЛЬНЫХ ЭЛЕМЕНТОВ
+/* Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений. */
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     genres: ['adventure', 'history'],
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     genres: ['fiction', 'mysticism'],
+//   },
+//   {
+//     title: 'Redder Than Blood',
+//     author: 'Tanith Lee',
+//     genres: ['horror', 'mysticism', 'adventure'],
+//   },
+// ];
+
+// const allGenres = books.flatMap(book => book.genres);
+// const uniqueGenres = allGenres.filter((book, index, array) => array.indexOf(book) === index);
+
+// console.log(allGenres);
+// // ["adventure", "history", "fiction", "mysticism", "horror", "mysticism", "adventure"]
+
+// console.log(uniqueGenres);
+// // ["adventure", "history", "fiction", "mysticism", "horror"]
