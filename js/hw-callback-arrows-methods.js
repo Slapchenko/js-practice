@@ -153,8 +153,13 @@
 // TODO 8. СТРЕЛОЧНЫЕ ФУНКЦИИ.
 /* Выполни рефакторинг функции calculateTotalPrice() так, чтобы она была объявлена как стрелочная. */
 
-// Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
 
-const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
+// console.log(calculateTotalPrice(5, 100));
 
-console.log(calculateTotalPrice(5, 100));
+// TODO 9. НЕЯВНЫЙ ВОЗВРАТ
+/* Выполни рефакторинг функции calculateTotalPrice() так, чтобы она использовала неявный возврат. */
+
+// const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
+
+// console.log(calculateTotalPrice(5, 100));
