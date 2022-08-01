@@ -803,58 +803,58 @@ removePotion(potionName) - удаляет объект зелья с имене�
 updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions. */
 
 // * v1
-// const atTheOldToad = {
-//   potions: [
-//     { name: 'Speed potion', price: 460 },
-//     { name: 'Dragon breath', price: 780 },
-//     { name: 'Stone skin', price: 520 },
-//   ],
+const atTheOldToad = {
+  potions: [
+    { name: 'Speed potion', price: 460 },
+    { name: 'Dragon breath', price: 780 },
+    { name: 'Stone skin', price: 520 },
+  ],
 
-//   // * v1
-//   getPotions() {
-//     return this.potions;
-//   },
+  // * v1
+  getPotions() {
+    return this.potions;
+  },
 
-//   addPotion(newPotion) {
-//     for (let i = 0; i < this.potions.length; i += 1) {
-//       const item = this.potions[i];
-//       const { name, price } = newPotion;
+  addPotion(newPotion) {
+    for (let i = 0; i < this.potions.length; i += 1) {
+      const item = this.potions[i];
+      const { name, price } = newPotion;
 
-//       if (item.name === name) {
-//         return `Error! Potion ${name} is already in your inventory!`;
-//       }
-//     }
+      if (item.name === name) {
+        return `Error! Potion ${name} is already in your inventory!`;
+      }
+    }
 
-//     this.potions.push(newPotion);
-//     return this.potions;
-//   },
+    this.potions.push(newPotion);
+    return this.potions;
+  },
 
-//   removePotion(potionName) {
-//     for (let i = 0; i < this.potions.length; i += 1) {
-//       const item = this.potions[i];
+  removePotion(potionName) {
+    for (let i = 0; i < this.potions.length; i += 1) {
+      const item = this.potions[i];
 
-//       if (item.name === potionName) {
-//         this.potions.splice(i, 1);
-//         return this.potions;
-//       }
-//     }
+      if (item.name === potionName) {
+        this.potions.splice(i, 1);
+        return this.potions;
+      }
+    }
 
-//     return `Potion ${potionName} is not in inventory!`;
-//   },
+    return `Potion ${potionName} is not in inventory!`;
+  },
 
-//   updatePotionName(oldName, newName) {
-//     for (let i = 0; i < this.potions.length; i += 1) {
-//       const item = this.potions[i];
+  updatePotionName(oldName, newName) {
+    for (let i = 0; i < this.potions.length; i += 1) {
+      const item = this.potions[i];
 
-//       if (item.name === oldName) {
-//         this.potions.splice(i, 1, { ...item, name: newName });
-//         return this.potions;
-//       }
-//     }
+      if (item.name === oldName) {
+        this.potions.splice(i, 1, { ...item, name: newName });
+        return this.potions;
+      }
+    }
 
-//     return `Potion ${oldName} is not in inventory!`;
-//   },
-// };
+    return `Potion ${oldName} is not in inventory!`;
+  },
+};
 
 //* v2
 // const atTheOldToad = {
