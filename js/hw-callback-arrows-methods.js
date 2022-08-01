@@ -117,16 +117,35 @@
 Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
  */
 
-function filterArray(numbers, value) {
-  const filteredNumbers = [];
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
 
-  numbers.forEach(number => {
-    if (number > value) {
-      filteredNumbers.push(number);
+//   numbers.forEach(number => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+
+//   return filteredNumbers;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+
+// TODO 7. ЗАДАЧА. ОБЩИЕ ЭЛЕМЕНТЫ
+/* Функция getCommonElements(firstArray, secondArray) принимает два массива произвольной длины в параметры firstArray и secondArray, и возвращает новый массив их общих элементов, то есть тех которые есть в обоих массивах.
+
+Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach. */
+
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+
+  firstArray.forEach(number => {
+    if (secondArray.includes(number)) {
+      commonElements.push(number);
     }
   });
 
-  return filteredNumbers;
+  return commonElements;
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // [1, 2]
