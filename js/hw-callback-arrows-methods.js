@@ -197,17 +197,33 @@
 // TODO 12. ЗАДАЧА. ОБЩИЕ ЭЛЕМЕНТЫ 2.0
 /* Замени объявление функции getCommonElements() и коллбек для метода forEach() на стрелочные функции. */
 
-// Change code below this line
-const getCommonElements = (firstArray, secondArray) => {
-  const commonElements = [];
+// const getCommonElements = (firstArray, secondArray) => {
+//   const commonElements = [];
 
-  firstArray.forEach(element => {
-    if (secondArray.includes(element)) {
-      commonElements.push(element);
-    }
-  });
+//   firstArray.forEach(element => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
 
-  return commonElements;
-};
+//   return commonElements;
+// };
 
-console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // [1, 2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // [1, 2]
+
+// TODO 13. ЧИСТЫЕ ФУНКЦИИ
+/* Функция changeEven(numbers, value) принимает массив чисел numbers и обновляет каждый элемент, значение которого это чётное число, добавляя к нему значение параметра value.
+
+Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла массив чисел numbers, а создавала, наполняла и возвращала новый массив с обновлёнными значениями. */
+
+function changeEven(numbers, value) {
+  let evenNumbers = [];
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    numbers[i] % 2 === 0 ? evenNumbers.push(numbers[i] + value) : evenNumbers.push(numbers[i]);
+  }
+
+  return evenNumbers;
+}
+
+console.log(changeEven([1, 2, 3, 4, 5], 10)); // [1, 12, 3, 14, 5]
