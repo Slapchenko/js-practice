@@ -136,16 +136,25 @@
 
 Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach. */
 
-function getCommonElements(firstArray, secondArray) {
-  const commonElements = [];
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
 
-  firstArray.forEach(number => {
-    if (secondArray.includes(number)) {
-      commonElements.push(number);
-    }
-  });
+//   firstArray.forEach(number => {
+//     if (secondArray.includes(number)) {
+//       commonElements.push(number);
+//     }
+//   });
 
-  return commonElements;
-}
+//   return commonElements;
+// }
 
-console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // [1, 2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // [1, 2]
+
+// TODO 8. СТРЕЛОЧНЫЕ ФУНКЦИИ.
+/* Выполни рефакторинг функции calculateTotalPrice() так, чтобы она была объявлена как стрелочная. */
+
+// Change code below this line
+
+const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
+
+console.log(calculateTotalPrice(5, 100));
