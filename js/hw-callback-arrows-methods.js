@@ -1944,6 +1944,83 @@
 // TODO 47. ЗАДАЧА. ИМЕНА ДРУЗЕЙ
 /* Дополни функцию getSortedFriends(users) так, чтобы она возвращала массив уникальных имён друзей (свойство friends) отсортированный по алфавиту . */
 
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//   },
+// ];
+
+// const getSortedFriends = users =>
+//   [...users]
+//     .flatMap(name => name.friends)
+//     .filter((user, index, array) => array.indexOf(user) === index)
+//     .sort((firstName, secondName) => firstName.localeCompare(secondName));
+
+// console.table(getSortedFriends(users));
+
+// TODO 48. ЗАДАЧА. ОБЩИЙ БАЛАНС
+/* Дополни функцию getTotalBalanceByGender(users, gender) так, чтобы она возвращала общий баланс пользователей (свойство balance), пол которых (свойство gender) совпадает со значением параметра gender. */
+
 const users = [
   {
     name: 'Moore Hensley',
@@ -2010,10 +2087,9 @@ const users = [
   },
 ];
 
-const getSortedFriends = users =>
+const getTotalBalanceByGender = (users, gender) =>
   [...users]
-    .flatMap(name => name.friends)
-    .filter((user, index, array) => array.indexOf(user) === index)
-    .sort((firstName, secondName) => firstName.localeCompare(secondName));
+    .filter(user => user.gender === gender)
+    .reduce((total, user) => total + user.balance, 0);
 
-console.table(getSortedFriends(users));
+console.log(getTotalBalanceByGender(users, 'male'));
