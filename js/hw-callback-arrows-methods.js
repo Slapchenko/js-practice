@@ -1151,30 +1151,103 @@
 5. В переменной eachElementInThirdIsEven был результат проверки всех элементов массива thirdArray на чётность.
 6. В переменной eachElementInThirdIsOdd был результат проверки всех элементов массива thirdArray на нечётность. */
 
-const firstArray = [26, 94, 36, 18];
-const secondArray = [17, 61, 23];
-const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
 
-const eachElementInFirstIsEven = firstArray.every(number => number % 2 === 0);
-const eachElementInFirstIsOdd = firstArray.every(number => number % 2 !== 0);
+// const eachElementInFirstIsEven = firstArray.every(number => number % 2 === 0);
+// const eachElementInFirstIsOdd = firstArray.every(number => number % 2 !== 0);
 
-const eachElementInSecondIsEven = secondArray.every(number => number % 2 === 0);
-const eachElementInSecondIsOdd = secondArray.every(number => number % 2 !== 0);
+// const eachElementInSecondIsEven = secondArray.every(number => number % 2 === 0);
+// const eachElementInSecondIsOdd = secondArray.every(number => number % 2 !== 0);
 
-const eachElementInThirdIsEven = thirdArray.every(number => number % 2 === 0);
-const eachElementInThirdIsOdd = thirdArray.every(number => number % 2 !== 0);
+// const eachElementInThirdIsEven = thirdArray.every(number => number % 2 === 0);
+// const eachElementInThirdIsOdd = thirdArray.every(number => number % 2 !== 0);
 
-console.log(
-  `1.`,
-  eachElementInFirstIsEven,
-  `2.`,
-  eachElementInFirstIsOdd,
-  `3.`,
-  eachElementInSecondIsEven,
-  `4.`,
-  eachElementInSecondIsOdd,
-  `5.`,
-  eachElementInThirdIsEven,
-  `6.`,
-  eachElementInThirdIsOdd
-);
+// console.log(
+//   `1.`,
+//   eachElementInFirstIsEven,
+//   `2.`,
+//   eachElementInFirstIsOdd,
+//   `3.`,
+//   eachElementInSecondIsEven,
+//   `4.`,
+//   eachElementInSecondIsOdd,
+//   `5.`,
+//   eachElementInThirdIsEven,
+//   `6.`,
+//   eachElementInThirdIsOdd
+// );
+
+// TODO 31. ЗАДАЧА. ВСЕ ЛИ ПОЛЬЗОВАТЕЛИ АКТИВНЫ
+/* Дополни функцию isEveryUserActive(users) так, чтобы она проверяла все ли пользователи сейчас активны (свойство isActive) и возвращала true или false. */
+
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+  },
+];
+
+const isEveryUserActive = users => users.every(user => user.isActive);
+
+console.log(isEveryUserActive(users));
