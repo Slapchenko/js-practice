@@ -1041,29 +1041,102 @@
 В переменной bookWithTitle получился объект книги название которой (свойство title) совпадает со значением переменной BOOK_TITLE.
 В переменной bookByAuthor получился объект книги автор который (свойство author) совпадает со значением переменной AUTHOR. */
 
-const books = [
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+// const AUTHOR = 'Robert Sheckley';
+
+// const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find(book => book.author === AUTHOR);
+
+// console.log(bookWithTitle);
+// console.log(bookByAuthor);
+
+// TODO 29. ЗАДАЧА. ПОЛЬЗОВАТЕЛЬ С ПОЧТОЙ
+/* Дополни функцию getUserWithEmail(users, email) так, чтобы она возвращала объект пользователя, почта которого (свойство email) совпадает со значением параметра email. */
+
+const users = [
   {
-    title: 'The Last Kingdom',
-    author: 'Bernard Cornwell',
-    rating: 8.38,
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
   },
   {
-    title: 'Beside Still Waters',
-    author: 'Robert Sheckley',
-    rating: 8.51,
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
   },
   {
-    title: 'The Dream of a Ridiculous Man',
-    author: 'Fyodor Dostoevsky',
-    rating: 7.75,
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
   },
-  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+  },
 ];
-const BOOK_TITLE = 'The Dream of a Ridiculous Man';
-const AUTHOR = 'Robert Sheckley';
 
-const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
-const bookByAuthor = books.find(book => book.author === AUTHOR);
+const getUserWithEmail = (users, email) => users.find(user => user.email === email);
 
-console.log(bookWithTitle);
-console.log(bookByAuthor);
+console.log(`Result:`, getUserWithEmail(users, 'shereeanthony@kog.com'));
