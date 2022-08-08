@@ -159,18 +159,61 @@ price - цена автомобиля.
 getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
 changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice. */
 
-class Car {
-  constructor({ brand, model, price }) {
-    this.brand = brand;
-    this.model = model;
-    this.price = price;
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   getPrice() {
+//     return this.price;
+//   }
+
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+// }
+
+// const bmw = new Car({ brand: 'bmw', model: 'x5', price: 60000 });
+// bmw.changePrice(80000);
+// console.log(bmw);
+
+// TODO 10. ЗАДАЧА: СКЛАД
+/* Напиши класс Storage, который будет создавать объекты для управления складом товаров. Класс ожидает только один аргумент - начальный массив товаров, который записывается на создаваемый объект в свойство items.
+
+Объяви следующие методы класса:
+
+getItems() - возвращает массив текущих товаров в свойстве items объекта который вызывает этот метод.
+addItem(newItem) - принимает новый товар newItem и добавляет его в массив товаров в свойстве items объекта который вызывает этот метод.
+removeItem(itemToRemove) - принимает товар itemToRemove и удаляет его из массива товаров в свойстве items объекта который вызывает этот метод.
+Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй. */
+
+class Storage {
+  constructor(items) {
+    this.items = items;
   }
 
-  getPrice() {
-    return this.price;
+  getItems() {
+    return this.items;
   }
 
-  changePrice(newPrice) {
-    this.price = newPrice;
+  addItem(newItem) {
+    this.items.push(newItem);
+  }
+
+  removeItem(itemToRemove) {
+    this.items.forEach(function (item, index, array) {
+      if (item === itemToRemove) {
+        array.splice(index, 1);
+      }
+    });
   }
 }
+
+const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem('Droid');
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem('Prolonger');
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
