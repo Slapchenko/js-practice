@@ -87,14 +87,35 @@
 // TODO 4. ПРОТОТИП ОБЪЕКТА
 /* Измени код так, чтобы объект parent стал прототипом для объекта в переменной сhild. */
 
-const parent = {
-  name: 'Stacey',
-  surname: 'Moore',
-  age: 54,
+// const parent = {
+//   name: 'Stacey',
+//   surname: 'Moore',
+//   age: 54,
+//   heritage: 'Irish',
+// };
+
+// const child = Object.create(parent);
+
+// child.name = 'Jason';
+// child.age = 27;
+
+// TODO 5. ЗАДАЧА: ЦЕПОЧКА ПРОТОТИПОВ
+/* Измени код, построив цепочку прототипов так, чтобы объект ancestor был прототипом для parent, а тот в свою очередь был прототипом для child. */
+
+const ancestor = {
+  name: 'Paul',
+  age: 83,
+  surname: 'Dawson',
   heritage: 'Irish',
 };
 
-const child = Object.create(parent);
+const parent = Object.create(ancestor);
+parent.name = 'Stacey';
+parent.surname = 'Moore';
+parent.age = 54;
 
+const child = Object.create(parent);
 child.name = 'Jason';
 child.age = 27;
+
+console.table(parent);
