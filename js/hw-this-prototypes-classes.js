@@ -59,27 +59,42 @@
 // TODO 3. ЗАДАЧА: ИСТОРИЯ ЗАКАЗОВ
 /* Тестировщики нашли баги в коде сервиса хранения истории заказов еды. Тебе необходимо исправить их, правильно расставив this в методах объекта historyService, чтобы методы начали работать правильно. */
 
-const historyService = {
-  orders: [
-    { email: 'jacob@hotmail.com', dish: 'Burrito' },
-    { email: 'solomon@topmail.net', dish: 'Burger' },
-    { email: 'artemis@coldmail.net', dish: 'Pizza' },
-    { email: 'solomon@topmail.net', dish: 'Apple pie' },
-    { email: 'jacob@hotmail.com', dish: 'Taco' },
-  ],
+// const historyService = {
+//   orders: [
+//     { email: 'jacob@hotmail.com', dish: 'Burrito' },
+//     { email: 'solomon@topmail.net', dish: 'Burger' },
+//     { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//     { email: 'solomon@topmail.net', dish: 'Apple pie' },
+//     { email: 'jacob@hotmail.com', dish: 'Taco' },
+//   ],
 
-  getOrdersLog() {
-    return this.orders.map(order => `email: ${order.email} dish: ${order.dish}`).join(' - ');
-  },
-  getEmails() {
-    const emails = this.orders.map(order => order.email);
-    const uniqueEmails = new Set(emails);
-    return [...uniqueEmails];
-  },
-  getOrdersByEmail(email) {
-    return this.orders.filter(order => order.email === email);
-  },
+//   getOrdersLog() {
+//     return this.orders.map(order => `email: ${order.email} dish: ${order.dish}`).join(' - ');
+//   },
+//   getEmails() {
+//     const emails = this.orders.map(order => order.email);
+//     const uniqueEmails = new Set(emails);
+//     return [...uniqueEmails];
+//   },
+//   getOrdersByEmail(email) {
+//     return this.orders.filter(order => order.email === email);
+//   },
+// };
+
+// console.log(historyService.getOrdersByEmail('solomon@topmail.net'));
+// // [{ email: "solomon@topmail.net", dish: "Burger" }, { email: "solomon@topmail.net", dish: "Apple pie" }]
+
+// TODO 4. ПРОТОТИП ОБЪЕКТА
+/* Измени код так, чтобы объект parent стал прототипом для объекта в переменной сhild. */
+
+const parent = {
+  name: 'Stacey',
+  surname: 'Moore',
+  age: 54,
+  heritage: 'Irish',
 };
 
-console.log(historyService.getOrdersByEmail('solomon@topmail.net'));
-// [{ email: "solomon@topmail.net", dish: "Burger" }, { email: "solomon@topmail.net", dish: "Apple pie" }]
+const child = Object.create(parent);
+
+child.name = 'Jason';
+child.age = 27;
