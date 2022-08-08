@@ -131,13 +131,24 @@ model - модель автомобиля.
 price - цена автомобиля.
 Класс Car должен создавать объект с одноимёнными свойствами brand, model и price, значениями которых должны быть переданные аргументы во время её вызова с оператором new. */
 
+// class Car {
+//   constructor(brand, model, price) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+// }
+
+// const bmw = new Car('bmw', 'x5', 60000);
+// console.log(bmw);
+
+// TODO 8. ОБЪЕКТ ПАРАМЕТРОВ
+/* Выполни рефакторинг класса Car так, чтобы он принимал один параметр - объект со свойсвами brand, model и price. Деструктуризируй объект в сигнатуре (подписи) конструктора. */
+
 class Car {
-  constructor(brand, model, price) {
+  constructor({ brand, model, price }) {
     this.brand = brand;
     this.model = model;
     this.price = price;
   }
 }
-
-const bmw = new Car('bmw', 'x5', 60000);
-console.log(bmw);
