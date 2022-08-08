@@ -179,7 +179,7 @@ changePrice(newPrice) - обновляет значение свойства pri
 // bmw.changePrice(80000);
 // console.log(bmw);
 
-// TODO 10. ЗАДАЧА: СКЛАД
+// ? 10. ЗАДАЧА: СКЛАД
 /* Напиши класс Storage, который будет создавать объекты для управления складом товаров. Класс ожидает только один аргумент - начальный массив товаров, который записывается на создаваемый объект в свойство items.
 
 Объяви следующие методы класса:
@@ -189,31 +189,73 @@ addItem(newItem) - принимает новый товар newItem и доба�
 removeItem(itemToRemove) - принимает товар itemToRemove и удаляет его из массива товаров в свойстве items объекта который вызывает этот метод.
 Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй. */
 
-class Storage {
-  constructor(items) {
-    this.items = items;
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+
+//   getItems() {
+//     return this.items;
+//   }
+
+//   addItem(newItem) {
+//     this.items.push(newItem);
+//   }
+
+//   removeItem(itemToRemove) {
+//     this.items.forEach(function (item, index, array) {
+//       if (item === itemToRemove) {
+//         array.splice(index, 1);
+//       }
+//     });
+//   }
+// }
+
+// const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem('Droid');
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem('Prolonger');
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// TODO 11. ЗАДАЧА: КОНСТРУКТОР СТРОК
+/* Напиши класс StringBuilder, который принимает один параметр initialValue - произвольную строку, которая записывается на создаваемый объект в свойство value.
+
+Объяви следующие методы класса:
+
+getValue() - возвращает текущее значение свойства value.
+padEnd(str) - получает парметр str (строку) и добавляет её в конец значения свойства value объекта который вызывает этот метод.
+padStart(str) - получает парметр str (строку) и добавляет её в начало значения свойства value объекта который вызывает этот метод.
+padBoth(str) - получает парметр str (строку) и добавляет её в начало и в конец значения свойства value объекта который вызывает этот метод.
+Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй. */
+
+class StringBuilder {
+  constructor(initialValue = '') {
+    this.value = initialValue;
   }
 
-  getItems() {
-    return this.items;
+  getValue() {
+    return this.value;
   }
 
-  addItem(newItem) {
-    this.items.push(newItem);
+  padEnd(str) {
+    this.value += str;
   }
 
-  removeItem(itemToRemove) {
-    this.items.forEach(function (item, index, array) {
-      if (item === itemToRemove) {
-        array.splice(index, 1);
-      }
-    });
+  padStart(str) {
+    this.value = str + this.value;
+  }
+
+  padBoth(str) {
+    this.value = str + this.value + str;
   }
 }
 
-const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem('Droid');
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem('Prolonger');
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+const builder = new StringBuilder('.');
+console.log(builder.getValue()); // "."
+builder.padStart('^');
+console.log(builder.getValue()); // "^."
+builder.padEnd('^');
+console.log(builder.getValue()); // "^.^"
+builder.padBoth('=');
+console.log(builder.getValue()); // "=^.^="
