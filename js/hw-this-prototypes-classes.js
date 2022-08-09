@@ -229,33 +229,57 @@ padStart(str) - получает парметр str (строку) и добав
 padBoth(str) - получает парметр str (строку) и добавляет её в начало и в конец значения свойства value объекта который вызывает этот метод.
 Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй. */
 
-class StringBuilder {
-  constructor(initialValue = '') {
-    this.value = initialValue;
+// class StringBuilder {
+//   constructor(initialValue = '') {
+//     this.value = initialValue;
+//   }
+
+//   getValue() {
+//     return this.value;
+//   }
+
+//   padEnd(str) {
+//     this.value += str;
+//   }
+
+//   padStart(str) {
+//     this.value = str + this.value;
+//   }
+
+//   padBoth(str) {
+//     this.value = str + this.value + str;
+//   }
+// }
+
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // "."
+// builder.padStart('^');
+// console.log(builder.getValue()); // "^."
+// builder.padEnd('^');
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth('=');
+// console.log(builder.getValue()); // "=^.^="
+
+//TODO 12. ПРИВАТНЫЕ СВОЙСТВА
+/* Выполни рефакторинг класса Car так, чтобы свойство brand было приватным и добавь два метода для публичного интерфейса, для чтения и изменения этого свойства.
+
+getBrand() - возвращает значение приватного свойства brand.
+changeBrand(newBrand) - изменяет значение приватного свойства brand на newBrand. */
+
+class Car {
+  #brand;
+
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.model = model;
+    this.price = price;
   }
 
-  getValue() {
-    return this.value;
+  getBrand() {
+    return this.#brand;
   }
 
-  padEnd(str) {
-    this.value += str;
-  }
-
-  padStart(str) {
-    this.value = str + this.value;
-  }
-
-  padBoth(str) {
-    this.value = str + this.value + str;
+  changeBrand(newBrand) {
+    this.#brand = newBrand;
   }
 }
-
-const builder = new StringBuilder('.');
-console.log(builder.getValue()); // "."
-builder.padStart('^');
-console.log(builder.getValue()); // "^."
-builder.padEnd('^');
-console.log(builder.getValue()); // "^.^"
-builder.padBoth('=');
-console.log(builder.getValue()); // "=^.^="
