@@ -320,36 +320,75 @@ changeBrand(newBrand) - изменяет значение приватного �
 
 Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй. */
 
-class StringBuilder {
-  #value;
+// class StringBuilder {
+//   #value;
 
-  constructor(initialValue) {
-    this.#value = initialValue;
+//   constructor(initialValue) {
+//     this.#value = initialValue;
+//   }
+
+//   getValue() {
+//     return this.#value;
+//   }
+
+//   padEnd(str) {
+//     this.#value += str;
+//   }
+
+//   padStart(str) {
+//     this.#value = str + this.#value;
+//   }
+
+//   padBoth(str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   }
+// }
+
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // "."
+// builder.padStart('^');
+// console.log(builder.getValue()); // "^."
+// builder.padEnd('^');
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth('=');
+// console.log(builder.getValue()); // "=^.^="
+
+// TODO 15. ГЕТТЕРЫ И СЕТТЕРЫ
+/* Выполни рефакторинг класса Car. Сделай свойства model и price приватными, также как #brand. Стандартизируй публичный интерфейс класса заменив уже объявленные методы на геттеры и сеттеры brand, model и price для взаимодействия с приватными свойствами. */
+
+class Car {
+  #brand;
+  #model;
+  #price;
+
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.#model = model;
+    this.#price = price;
   }
 
-  getValue() {
-    return this.#value;
+  get brand() {
+    return this.#brand;
   }
 
-  padEnd(str) {
-    this.#value += str;
+  set brand(newBrand) {
+    this.#brand = newBrand;
   }
 
-  padStart(str) {
-    this.#value = str + this.#value;
+  get model() {
+    return this.#model;
   }
 
-  padBoth(str) {
-    this.padStart(str);
-    this.padEnd(str);
+  set model(newModel) {
+    this.#model = newModel;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    this.#price = newPrice;
   }
 }
-
-const builder = new StringBuilder('.');
-console.log(builder.getValue()); // "."
-builder.padStart('^');
-console.log(builder.getValue()); // "^."
-builder.padEnd('^');
-console.log(builder.getValue()); // "^.^"
-builder.padBoth('=');
-console.log(builder.getValue()); // "=^.^="
