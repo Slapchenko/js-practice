@@ -266,20 +266,51 @@ padBoth(str) - получает парметр str (строку) и добав�
 getBrand() - возвращает значение приватного свойства brand.
 changeBrand(newBrand) - изменяет значение приватного свойства brand на newBrand. */
 
-class Car {
-  #brand;
+// class Car {
+//   #brand;
 
-  constructor({ brand, model, price }) {
-    this.#brand = brand;
-    this.model = model;
-    this.price = price;
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   getBrand() {
+//     return this.#brand;
+//   }
+
+//   changeBrand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+// }
+
+// TODO 13. ЗАДАЧА: СКЛАД 2.0
+/* Выполни рефакторинг класса Storage, сделав свойство items приватным.
+
+Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй. */
+
+class Storage {
+  #items;
+  constructor(items) {
+    this.#items = items;
   }
 
-  getBrand() {
-    return this.#brand;
+  getItems() {
+    return this.#items;
   }
 
-  changeBrand(newBrand) {
-    this.#brand = newBrand;
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+
+  removeItem(itemToRemove) {
+    this.#items = this.#items.filter(item => item !== itemToRemove);
   }
 }
+
+const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem('Droid');
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem('Prolonger');
+console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
