@@ -7,15 +7,39 @@ uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
 uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 uniqueInOrder([1,2,2,3,3])       == [1,2,3] */
 
-var uniqueInOrder = function (iterable) {
-  const uniqueElArray = [...iterable].reduce((acc, element) => {
-    if (acc[acc.length - 1] !== element) acc.push(element);
-    return acc;
-  }, []);
+// var uniqueInOrder = function (iterable) {
+//   const uniqueElArray = [...iterable].reduce((acc, element) => {
+//     if (acc[acc.length - 1] !== element) acc.push(element);
+//     return acc;
+//   }, []);
 
-  return uniqueElArray;
-};
+//   return uniqueElArray;
+// };
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB'));
-console.log(uniqueInOrder('ABBCcAD'));
-console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+// console.log(uniqueInOrder('ABBCcAD'));
+// console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+
+// TODO Task #2
+/* Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+Examples input/output:
+
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false */
+
+// function XO(str) {
+//   const x = [...str].filter(value => value === 'x' || value === 'X');
+//   const o = [...str].filter(value => value === 'o' || value === 'O');
+
+//   return x.length === o.length;
+// }
+
+// console.log(XO('ooxx'));
+// console.log(XO('xooxx'));
+// console.log(XO('ooxXm'));
+// console.log(XO('zpzpzpp'));
+// console.log(XO('zzoo'));
