@@ -7,14 +7,14 @@ uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
 uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 uniqueInOrder([1,2,2,3,3])       == [1,2,3] */
 
-// var uniqueInOrder = function (iterable) {
-//   const uniqueElArray = [...iterable].reduce((acc, element) => {
-//     if (acc[acc.length - 1] !== element) acc.push(element);
-//     return acc;
-//   }, []);
+var uniqueInOrder = function (iterable) {
+  const uniqueElArray = [...iterable].reduce((acc, element) => {
+    if (acc[acc.length - 1] !== element) acc.push(element);
+    return acc;
+  }, []);
 
-//   return uniqueElArray;
-// };
+  return uniqueElArray;
+};
 
 // console.log(uniqueInOrder('AAAABBBCCDAABBB'));
 // console.log(uniqueInOrder('ABBCcAD'));
@@ -31,15 +31,22 @@ XO("ooxXm") => true
 XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 XO("zzoo") => false */
 
-// function XO(str) {
-//   const x = [...str].filter(value => value === 'x' || value === 'X');
-//   const o = [...str].filter(value => value === 'o' || value === 'O');
+function XO(str) {
+  const x = str
+    .toLowerCase()
+    .split('')
+    .filter(value => value === 'x');
 
-//   return x.length === o.length;
-// }
+  const o = str
+    .toLowerCase()
+    .split('')
+    .filter(value => value === 'o');
 
-// console.log(XO('ooxx'));
-// console.log(XO('xooxx'));
-// console.log(XO('ooxXm'));
-// console.log(XO('zpzpzpp'));
-// console.log(XO('zzoo'));
+  return x.length === o.length;
+}
+
+console.log(XO('ooxx'));
+console.log(XO('xooxx'));
+console.log(XO('ooxXm'));
+console.log(XO('zpzpzpp'));
+console.log(XO('zzoo'));
