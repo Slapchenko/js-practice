@@ -75,3 +75,33 @@ Write a function that will take the number of petals of each flower and return t
 // console.log(lovefunc(2, 2)); // false
 // console.log(lovefunc(0, 1)); // true
 // console.log(lovefunc(0, 0)); // false
+
+// TODO Task #4 Sum without highest and lowest number
+/* Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+
+The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+Mind the input validation.
+
+Example
+{ 6, 2, 1, 8, 10 } => 16
+{ 1, 1, 11, 2, 3 } => 6 */
+
+// function sumArray(array = []) {
+//   if (array === null || array.length <= 2) {
+//     return 0;
+//   }
+
+//   const total = array.reduce((acc, number) => acc + number, 0);
+
+//   return total - (Math.max(...array) + Math.min(...array));
+// }
+
+// console.log(sumArray(null)); // 0
+// console.log(sumArray([])); // 0
+// console.log(sumArray([3])); // 0
+// console.log(sumArray([3, 5])); // 0
+// console.log(sumArray([6, 2, 1, 8, 10])); // 16
+// console.log(sumArray([0, 1, 6, 10, 10])); // 17
+// console.log(sumArray([-6, -20, -1, -10, -12])); // -28
+// console.log(sumArray([-6, 20, -1, 10, -12])); // 3
