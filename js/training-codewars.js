@@ -123,3 +123,28 @@ Examples (Input -> Output)
 // console.log(min([42, 54, 65, 87, 0])); // 0
 // console.log(max([4, 6, 2, 1, 9, 63, -134, 566])); // 566
 // console.log(max([5])); // 5
+
+// TODO Task #6 Calculate average
+/* Write a function which calculates the average of the numbers in a given list.
+
+Note: Empty arrays should return 0. */
+
+// * v1
+// function find_average(array) {
+//   if (array.length > 0) {
+//     const total = array.reduce((acc, number) => acc + number);
+//     return total / array.length;
+//   }
+
+//   return 0;
+// }
+
+// * v2
+function find_average(array) {
+  return array.length > 0 ? array.reduce((acc, number) => acc + number) / array.length : 0;
+}
+
+console.log(find_average([1, 1, 1])); // 1
+console.log(find_average([1, 2, 3])); // 2
+console.log(find_average([1, 2, 3, 4])); // 2.5
+console.log(find_average([])); // 0
