@@ -276,3 +276,22 @@ Output string must be two numbers separated by a single space, and highest numbe
 // }
 
 // console.log(highAndLow('8 3 -5 42 -1 0 0 -9 4 7 4 -4')); // '42 -9'
+
+// TODO Task #11 Find the smallest integer in the array
+/* Given an array of integers your solution should find the smallest integer.
+
+For example:
+
+Given [34, 15, 88, 2] your solution will return 2
+Given [34, -345, -1, 100] your solution will return -345
+You can assume, for the purpose of this kata, that the supplied array will not be empty. */
+
+// class SmallestIntegerFinder {
+//   findSmallestInt(args) {
+//     return Math.min.apply(null, args);
+//   }
+// }
+
+// const highestNumber = new SmallestIntegerFinder();
+
+// console.log(highestNumber.findSmallestInt([78, 56, 232, 12, 8])); // 8
