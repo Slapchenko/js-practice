@@ -384,20 +384,29 @@ longest(a, b) -> "abcdefklmopqwxy"
 a = "abcdefghijklmnopqrstuvwxyz"
 longest(a, a) -> "abcdefghijklmnopqrstuvwxyz" */
 
-function longest(s1, s2) {
-  return s1
-    .concat(s2)
-    .split('')
-    .filter((symbol, index, array) => array.indexOf(symbol) === index)
-    .sort()
-    .join('');
+// function longest(s1, s2) {
+//   return s1
+//     .concat(s2)
+//     .split('')
+//     .filter((symbol, index, array) => array.indexOf(symbol) === index)
+//     .sort()
+//     .join('');
+// }
+
+// console.log(longest('aretheyhere', 'yestheyarehere'));
+// // "aehrsty"
+
+// console.log(longest('loopingisfunbutdangerous', 'lessdangerousthancoding'));
+// //"abcdefghilnoprstu"
+
+// console.log(longest('inmanylanguages', 'theresapairoffunctions'));
+// // 'acefghilmnoprstuy';
+
+// TODO Task #15 MakeUpperCase
+/* Write a function which converts the input string to uppercase. */
+
+function makeUpperCase(str = '') {
+  return str.toUpperCase();
 }
 
-console.log(longest('aretheyhere', 'yestheyarehere'));
-// "aehrsty"
-
-console.log(longest('loopingisfunbutdangerous', 'lessdangerousthancoding'));
-//"abcdefghilnoprstu"
-
-console.log(longest('inmanylanguages', 'theresapairoffunctions'));
-// 'acefghilmnoprstuy';
+console.log(makeUpperCase('hello')); // "HELLO"
