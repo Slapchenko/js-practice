@@ -178,19 +178,80 @@ Example: (input --> output)
 "ATTGC" --> "TAACG"
 "GTAT" --> "CATA" */
 
-function DNAStrand(dna) {
-  const complementarySide = [...dna]
-    .map((symbol, index, array) => {
-      if (symbol === 'A') return (array[index] = 'T');
-      if (symbol === 'T') return (array[index] = 'A');
-      if (symbol === 'C') return (array[index] = 'G');
-      if (symbol === 'G') return (array[index] = 'C');
-    })
-    .join('');
+//*v1
+// function DNAStrand(dna) {
+//   const complementarySide = [...dna]
+//     .map((symbol, index, array) => {
+//       if (symbol === 'A') return (array[index] = 'T');
+//       if (symbol === 'T') return (array[index] = 'A');
+//       if (symbol === 'C') return (array[index] = 'G');
+//       if (symbol === 'G') return (array[index] = 'C');
+//     })
+//     .join('');
 
-  return `${complementarySide}, String ${dna} is`;
-}
+//   return `${complementarySide}, String ${dna} is`;
+// }
 
-console.log(DNAStrand('AAAA')); // TTTT', 'String AAAA is');
-console.log(DNAStrand('ATTGC')); //  'TAACG', 'String ATTGC is');
-console.log(DNAStrand('GTAT')); // CATA', 'String GTAT is');
+// ? v2
+// function DNAStrand(dna) {
+//
+//   return dna.replace(/./g, function (c) {
+//     return DNAStrand.pairs[c];
+//   });
+// }
+
+// DNAStrand.pairs = {
+//   A: 'T',
+//   T: 'A',
+//   C: 'G',
+//   G: 'C',
+// };
+
+// console.log(DNAStrand('AAAA')); // TTTT', 'String AAAA is');
+// console.log(DNAStrand('ATTGC')); //  'TAACG', 'String ATTGC is');
+// console.log(DNAStrand('GTAT')); // CATA', 'String GTAT is');
+
+// TODO Task #9 Mumbling
+/* This time no story, no theory. The examples below show you how to write function accum:
+
+Examples:
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+The parameter of accum is a string which includes only letters from a..z and A..Z. */
+
+// * v1
+// function accum(s) {
+//   return s
+//     .toUpperCase()
+//     .split('')
+//     .reduce((acc, symbol, index) => acc + '-' + symbol + symbol.toLowerCase().repeat(index));
+// }
+
+// * v2
+// function accum(s) {
+//   return s
+//     .split('')
+//     .map((c, i) => c.toUpperCase() + c.toLowerCase().repeat(i))
+//     .join('-');
+// }
+
+// console.log(accum('RqaEzty'));
+// "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// console.log(accum('ZpglnRxqenU'));
+// // "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu"
+// console.log(accum('NyffsGeyylB'));
+// // "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb"
+// console.log(accum('MjtkuBovqrU'));
+// // "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu"
+// console.log(accum('EvidjUnokmM'));
+// // "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm"
+// console.log(accum('HbideVbxncC'));
+// // "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc"
+
+// function accum(s) {
+//   return s
+//     .toUpperCase()
+//     .split('')
+//     .reduce((acc, symbol, index) => acc + '-' + symbol + symbol.toLowerCase().repeat(index));
+// }
