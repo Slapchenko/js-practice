@@ -405,8 +405,24 @@ longest(a, a) -> "abcdefghijklmnopqrstuvwxyz" */
 // TODO Task #15 MakeUpperCase
 /* Write a function which converts the input string to uppercase. */
 
-function makeUpperCase(str = '') {
-  return str.toUpperCase();
+// function makeUpperCase(str = '') {
+//   return str.toUpperCase();
+// }
+
+// console.log(makeUpperCase('hello')); // "HELLO"
+
+// TODO Task #16 You only need one - Beginner
+/* You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+
+Array can contain numbers or strings. X can be either.
+
+Return true if the array contains the value, false if not. */
+
+function check(a = [], x) {
+  return a.includes(x);
 }
 
-console.log(makeUpperCase('hello')); // "HELLO"
+console.log(check([66, 101], 66)); // true
+console.log(check([101, 45, 75, 105, 99, 107], 107)); // true
+console.log(check(['t', 'e', 's', 't'], 'e')); // true
+console.log(check(['what', 'a', 'great', 'kata'], 'kat')); // false
