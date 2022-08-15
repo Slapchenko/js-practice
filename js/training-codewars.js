@@ -336,3 +336,39 @@ Examples(Operator, value1, value2) --> output
 // console.log(basicOp('-', 15, 18)); // -3
 // console.log(basicOp('*', 5, 5)); // 25
 // console.log(basicOp('/', 49, 7)); // 7
+
+// TODO Task #13 Count of positives / sum of negatives
+/* Given an array of integers.
+
+Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+
+If the input is an empty array or is null, return an empty array.
+
+Example
+For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65]. */
+
+// function countPositivesSumNegatives(input) {
+//   if (input === null) {
+//     return new Array();
+//   }
+
+//   if (input.length < 1) {
+//     return new Array();
+//   }
+
+//   if (input[0] + input[1] === 0) {
+//     return new Array();
+//   }
+
+//   return [
+//     input.filter(number => number > 0).length,
+//     input.filter(number => number < 0).reduce((acc, number) => acc + number, 0),
+//   ];
+// }
+
+// const input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15];
+// console.log(countPositivesSumNegatives(input)); // [10, -65]
+
+// console.log('null', countPositivesSumNegatives(null)); //
+// console.log('пустой', countPositivesSumNegatives([])); //
+// console.log('два ноля', countPositivesSumNegatives([0, 0])); //
