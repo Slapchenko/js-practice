@@ -525,8 +525,20 @@ Notes
 The number can be negative already, in which case no change is required.
 Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense. */
 
-function makeNegative(num) {
-  return num <= 0 ? num : num - num * 2;
+// function makeNegative(num) {
+//   return num <= 0 ? num : num - num * 2;
+// }
+
+// console.log(makeNegative(42)); // -42
+
+// TODO Task #22 Is this a triangle?
+/* Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+
+(In this case, all triangles must have surface greater than 0 to be accepted). */
+
+function isTriangle(a, b, c) {
+  return a + b > c && b + c > a && c + a > b ? true : false;
 }
 
-console.log(makeNegative(42)); // -42
+console.log(isTriangle(1, 2, 2)); // true
+console.log(isTriangle(7, 2, 2)); // false
