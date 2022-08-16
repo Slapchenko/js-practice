@@ -1,4 +1,4 @@
-// TODO Task #1
+// TODO Task #1 Unique In Order
 /* Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
 
 For example:
@@ -446,13 +446,31 @@ Input: [0, -1, -5]
 Output: "even"
 Have fun! */
 
-function oddOrEven(array) {
-  return array.reduce((acc, number) => acc + number, 0) % 2 === 0 ? 'even' : 'odd';
+// function oddOrEven(array) {
+//   return array.reduce((acc, number) => acc + number, 0) % 2 === 0 ? 'even' : 'odd';
+// }
+
+// console.log(oddOrEven([0])); // 'even'
+// console.log(oddOrEven([1])); // 'odd'
+// console.log(oddOrEven([])); // 'even'
+// console.log(oddOrEven([0, 1, 5])); // 'even'
+// console.log(oddOrEven([0, 1, 3])); // 'even'
+// console.log(oddOrEven([1023, 1, 2])); // 'even'
+
+// TODO Task #18 Reverse words
+/* Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+Examples
+"This is an example!" ==> "sihT si na !elpmaxe"
+"double  spaces"      ==> "elbuod  secaps" */
+
+function reverseWords(str = '') {
+  return str
+    .split(' ')
+    .map(element => element.split('').reverse())
+    .join(' ')
+    .replace(/,/g, '');
 }
 
-console.log(oddOrEven([0])); // 'even'
-console.log(oddOrEven([1])); // 'odd'
-console.log(oddOrEven([])); // 'even'
-console.log(oddOrEven([0, 1, 5])); // 'even'
-console.log(oddOrEven([0, 1, 3])); // 'even'
-console.log(oddOrEven([1023, 1, 2])); // 'even'
+console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
+// 'ehT kciuq nworb xof spmuj revo eht yzal .god';
