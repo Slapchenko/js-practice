@@ -464,13 +464,34 @@ Examples
 "This is an example!" ==> "sihT si na !elpmaxe"
 "double  spaces"      ==> "elbuod  secaps" */
 
-function reverseWords(str = '') {
-  return str
-    .split(' ')
-    .map(element => element.split('').reverse())
-    .join(' ')
-    .replace(/,/g, '');
+// function reverseWords(str = '') {
+//   return str
+//     .split(' ')
+//     .map(element => element.split('').reverse())
+//     .join(' ')
+//     .replace(/,/g, '');
+// }
+
+// console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
+// 'ehT kciuq nworb xof spmuj revo eht yzal .god';
+
+// TODO Task #19 Square Every Digit
+/* Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+
+Note: The function accepts an integer and returns an integer */
+
+function squareDigits(num) {
+  return Number(
+    num
+      .toString()
+      .split('')
+      .map(number => Math.pow(number, 2))
+      .join('')
+  );
 }
 
-console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
-// 'ehT kciuq nworb xof spmuj revo eht yzal .god';
+console.log(squareDigits(3212)); // 9414
+console.log(squareDigits(2112)); // 4114
+console.log(squareDigits(0)); // 0
