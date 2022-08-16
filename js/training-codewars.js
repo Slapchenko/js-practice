@@ -506,9 +506,27 @@ Examples:(Input1, Input2 --> Output (explanation)))
 1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary) */
 
-function addBinary(a, b) {
-  return (a + b).toString(2);
+// function addBinary(a, b) {
+//   return (a + b).toString(2);
+// }
+
+// console.log(addBinary(1, 1)); // "10" (1 + 1 = 2 in decimal or 10 in binary)
+// console.log(addBinary(5, 9)); // "1110" (5 + 9 = 14 in decimal or 1110 in binary)
+
+// TODO Task #21 Return Negative
+/* In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+
+Examples
+makeNegative(1);    // return -1
+makeNegative(-5);   // return -5
+makeNegative(0);    // return 0
+makeNegative(0.12); // return -0.12
+Notes
+The number can be negative already, in which case no change is required.
+Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense. */
+
+function makeNegative(num) {
+  return num <= 0 ? num : num - num * 2;
 }
 
-console.log(addBinary(1, 1)); // "10" (1 + 1 = 2 in decimal or 10 in binary)
-console.log(addBinary(5, 9)); // "1110" (5 + 9 = 14 in decimal or 1110 in binary)
+console.log(makeNegative(42)); // -42
