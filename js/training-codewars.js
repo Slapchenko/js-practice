@@ -671,18 +671,30 @@ Example: (Input --> Output)
 "aba" --> false
 "moOse" --> false (ignore letter case) */
 
-function isIsogram(str = '') {
-  const unique = str
-    .toLowerCase()
-    .split('')
-    .filter((symbol, index, array) => array.indexOf(symbol) !== index);
+// function isIsogram(str = '') {
+//   const unique = str
+//     .toLowerCase()
+//     .split('')
+//     .filter((symbol, index, array) => array.indexOf(symbol) !== index);
 
-  return unique.length < 1 ? true : false;
+//   return unique.length < 1 ? true : false;
+// }
+
+// console.log(isIsogram('Dermatoglyphics')); // true
+// console.log(isIsogram('isogram')); // true
+// console.log(isIsogram('aba')); // false
+// console.log(isIsogram('moOse')); // false
+// console.log(isIsogram('isIsogram')); // false
+// console.log(isIsogram('')); // true
+
+// TODO Task #27 Returning Strings
+/* Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+
+[Make sure you type the exact thing I wrote or the program may not execute properly] */
+
+function greet(name) {
+  return `Hello, ${name} how are you doing today?`;
 }
 
-console.log(isIsogram('Dermatoglyphics')); // true
-console.log(isIsogram('isogram')); // true
-console.log(isIsogram('aba')); // false
-console.log(isIsogram('moOse')); // false
-console.log(isIsogram('isIsogram')); // false
-console.log(isIsogram('')); // true
+console.log(greet('Ryan')); // "Hello, Ryan how are you doing today?"
+console.log(greet('Shingles')); // "Hello, Shingles how are you doing today?"
