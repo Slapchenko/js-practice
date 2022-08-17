@@ -704,10 +704,23 @@ Example: (Input --> Output)
 
 String will never be empty and you do not need to account for different data types. */
 
-function findShort(s = '') {
-  return Math.min(...(s.split(' ').map(word => word.length)));
+// function findShort(s = '') {
+//   return Math.min(...s.split(' ').map(word => word.length));
+// }
+
+// console.log(findShort('bitcoin take over the world maybe who knows perhaps')); // 3
+// console.log(findShort('turns out random test cases are easier than writing out basic ones')); // 3
+// console.log(findShort("Let's travel abroad shall we")); // 2
+
+// TODO Task #29 Even or Odd
+/* Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers. */
+
+function even_or_odd(number) {
+  return number % 2 ? 'Odd' : 'Even';
 }
 
-console.log(findShort('bitcoin take over the world maybe who knows perhaps')); // 3
-console.log(findShort('turns out random test cases are easier than writing out basic ones')); // 3
-console.log(findShort("Let's travel abroad shall we")); // 2
+console.log(even_or_odd(2)); // "Even"
+console.log(even_or_odd(7)); // "Odd"
+console.log(even_or_odd(-42)); // "Even"
+console.log(even_or_odd(-7)); // "Odd"
+console.log(even_or_odd(0)); // "Even"
