@@ -764,9 +764,26 @@ Considering these factors, write a function that tells you if it is possible to 
 
 Function should return true if it is possible and false if not. */
 
-const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-  return mpg * fuelLeft >= distanceToPump ? true : false;
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+//   return mpg * fuelLeft >= distanceToPump ? true : false;
+// };
+
+// console.log(zeroFuel(50, 25, 2)); // true
+// console.log(zeroFuel(100, 50, 1)); // false
+
+// TODO Task #32 Reversed sequence
+/* Build a function that returns an array of integers from n to 1 where n>0.
+
+Example : n=5 --> [5,4,3,2,1] */
+
+const reverseSeq = n => {
+  let array = [];
+
+  for (let i = 0; i < n; i += 1) {
+    array.unshift(i + 1);
+  }
+
+  return array;
 };
 
-console.log(zeroFuel(50, 25, 2)); // true
-console.log(zeroFuel(100, 50, 1)); // false
+console.log(reverseSeq(5)); // [5, 4, 3, 2, 1]
