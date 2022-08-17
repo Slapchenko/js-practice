@@ -633,16 +633,31 @@ Examples (input -> output)
 6, "I"     -> "IIIIII"
 5, "Hello" -> "HelloHelloHelloHelloHello" */
 
-function repeatStr(n, s) {
-  let str = '';
+// function repeatStr(n, s) {
+//   let str = '';
 
-  for (let i = 1; i <= n; i += 1) {
-    str += s;
-  }
+//   for (let i = 1; i <= n; i += 1) {
+//     str += s;
+//   }
 
-  return str;
+//   return str;
+// }
+
+// console.log(repeatStr(3, '*')); // "***"
+// console.log(repeatStr(5, '#')); // "#####"
+// console.log(repeatStr(2, 'ha ')); // "ha ha "
+
+// TODO Task #25 Reversed Strings
+/* Complete the solution so that it reverses the string passed into it.
+
+'world'  =>  'dlrow'
+'word'   =>  'drow' */
+
+function solution(str = '') {
+  return str.split('').reverse().join('');
 }
 
-console.log(repeatStr(3, '*')); // "***"
-console.log(repeatStr(5, '#')); // "#####"
-console.log(repeatStr(2, 'ha ')); // "ha ha "
+console.log(solution('world')); // 'dlrow'
+console.log(solution('hello')); // 'olleh'
+console.log(solution('')); // ''
+console.log(solution('h')); // 'h'
