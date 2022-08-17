@@ -653,11 +653,36 @@ Examples (input -> output)
 'world'  =>  'dlrow'
 'word'   =>  'drow' */
 
-function solution(str = '') {
-  return str.split('').reverse().join('');
+// function solution(str = '') {
+//   return str.split('').reverse().join('');
+// }
+
+// console.log(solution('world')); // 'dlrow'
+// console.log(solution('hello')); // 'olleh'
+// console.log(solution('')); // ''
+// console.log(solution('h')); // 'h'
+
+// TODO Task #26 Isograms
+/* An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+Example: (Input --> Output)
+
+"Dermatoglyphics" --> true
+"aba" --> false
+"moOse" --> false (ignore letter case) */
+
+function isIsogram(str = '') {
+  const unique = str
+    .toLowerCase()
+    .split('')
+    .filter((symbol, index, array) => array.indexOf(symbol) !== index);
+
+  return unique.length < 1 ? true : false;
 }
 
-console.log(solution('world')); // 'dlrow'
-console.log(solution('hello')); // 'olleh'
-console.log(solution('')); // ''
-console.log(solution('h')); // 'h'
+console.log(isIsogram('Dermatoglyphics')); // true
+console.log(isIsogram('isogram')); // true
+console.log(isIsogram('aba')); // false
+console.log(isIsogram('moOse')); // false
+console.log(isIsogram('isIsogram')); // false
+console.log(isIsogram('')); // true
