@@ -692,9 +692,22 @@ Example: (Input --> Output)
 
 [Make sure you type the exact thing I wrote or the program may not execute properly] */
 
-function greet(name) {
-  return `Hello, ${name} how are you doing today?`;
+// function greet(name) {
+//   return `Hello, ${name} how are you doing today?`;
+// }
+
+// console.log(greet('Ryan')); // "Hello, Ryan how are you doing today?"
+// console.log(greet('Shingles')); // "Hello, Shingles how are you doing today?"
+
+// TODO Task #28 Shortest Word
+/* Simple, given a string of words, return the length of the shortest word(s).
+
+String will never be empty and you do not need to account for different data types. */
+
+function findShort(s = '') {
+  return Math.min(...(s.split(' ').map(word => word.length)));
 }
 
-console.log(greet('Ryan')); // "Hello, Ryan how are you doing today?"
-console.log(greet('Shingles')); // "Hello, Shingles how are you doing today?"
+console.log(findShort('bitcoin take over the world maybe who knows perhaps')); // 3
+console.log(findShort('turns out random test cases are easier than writing out basic ones')); // 3
+console.log(findShort("Let's travel abroad shall we")); // 2
