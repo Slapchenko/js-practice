@@ -804,14 +804,50 @@ there are 10 matches in the championship
 0 <= x <= 4
 0 <= y <= 4 */
 
-function points(games = []) {
-  return games.reduce((acc, match) => {
-    if (match[0] > match[2]) return acc + 3;
+// function points(games = []) {
+//   return games.reduce((acc, match) => {
+//     if (match[0] > match[2]) return acc + 3;
 
-    if (match[0] < match[2]) return acc + 0;
+//     if (match[0] < match[2]) return acc + 0;
 
-    if (match[0] === match[2]) return acc + 1;
-  }, 0);
+//     if (match[0] === match[2]) return acc + 1;
+//   }, 0);
+// }
+
+// console.log(points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3'])); // 30
+
+// TODO Task #34 Duplicate Encoder
+/* The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+Examples
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" 
+Notes
+Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input! */
+
+// function duplicateEncode(word = '') {
+//   return word.replace(/(.)/gi, ')');
+// }
+
+function duplicateEncode(word) {
+  const characterArray = word.toLocaleLowerCase().split('');
+
+  const uniqueСharacter = characterArray.filter(
+    element => characterArray.indexOf(element) === characterArray.lastIndexOf(element)
+  );
+
+  const convertString = [];
+
+  for (let i = 0; i < characterArray.length; i++) {
+    uniqueСharacter.includes(characterArray[i]) ? convertString.push('(') : convertString.push(')');
+  }
+
+  return convertString.join('');
 }
 
-console.log(points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3'])); // 30
+console.log(duplicateEncode('din')); // "((("
+console.log(duplicateEncode('recede')); // "()()()"
+console.log(duplicateEncode('Success')); // ")())())"
+console.log(duplicateEncode('(( @')); // "))(("
