@@ -831,23 +831,31 @@ Assertion messages may be unclear about what they display in some languages. If 
 //   return word.replace(/(.)/gi, ')');
 // }
 
-function duplicateEncode(word) {
-  const characterArray = word.toLocaleLowerCase().split('');
+// function duplicateEncode(word) {
+//   const characterArray = word.toLocaleLowerCase().split('');
 
-  const uniqueСharacter = characterArray.filter(
-    element => characterArray.indexOf(element) === characterArray.lastIndexOf(element)
-  );
+//   const uniqueСharacter = characterArray.filter(
+//     element => characterArray.indexOf(element) === characterArray.lastIndexOf(element)
+//   );
 
-  const convertString = [];
+//   const convertString = [];
 
-  for (let i = 0; i < characterArray.length; i++) {
-    uniqueСharacter.includes(characterArray[i]) ? convertString.push('(') : convertString.push(')');
-  }
+//   for (let i = 0; i < characterArray.length; i++) {
+//     uniqueСharacter.includes(characterArray[i]) ? convertString.push('(') : convertString.push(')');
+//   }
 
-  return convertString.join('');
-}
+//   return convertString.join('');
+// }
 
-console.log(duplicateEncode('din')); // "((("
-console.log(duplicateEncode('recede')); // "()()()"
-console.log(duplicateEncode('Success')); // ")())())"
-console.log(duplicateEncode('(( @')); // "))(("
+// console.log(duplicateEncode('din')); // "((("
+// console.log(duplicateEncode('recede')); // "()()()"
+// console.log(duplicateEncode('Success')); // ")())())"
+// console.log(duplicateEncode('(( @')); // "))(("
+
+
+
+console.log(10 + '20');
+
+// function count(num1, num2, mark) {
+//   /* ваш код тут */
+// }
