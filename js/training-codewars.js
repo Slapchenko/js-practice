@@ -831,23 +831,42 @@ Assertion messages may be unclear about what they display in some languages. If 
 //   return word.replace(/(.)/gi, ')');
 // }
 
-function duplicateEncode(word) {
-  const characterArray = word.toLocaleLowerCase().split('');
+// function duplicateEncode(word) {
+//   const characterArray = word.toLocaleLowerCase().split('');
 
-  const uniqueСharacter = characterArray.filter(
-    element => characterArray.indexOf(element) === characterArray.lastIndexOf(element)
-  );
+//   const uniqueСharacter = characterArray.filter(
+//     element => characterArray.indexOf(element) === characterArray.lastIndexOf(element)
+//   );
 
-  const convertString = [];
+//   const convertString = [];
 
-  for (let i = 0; i < characterArray.length; i++) {
-    uniqueСharacter.includes(characterArray[i]) ? convertString.push('(') : convertString.push(')');
-  }
+//   for (let i = 0; i < characterArray.length; i++) {
+//     uniqueСharacter.includes(characterArray[i]) ? convertString.push('(') : convertString.push(')');
+//   }
 
-  return convertString.join('');
+//   return convertString.join('');
+// }
+
+// console.log(duplicateEncode('din')); // "((("
+// console.log(duplicateEncode('recede')); // "()()()"
+// console.log(duplicateEncode('Success')); // ")())())"
+// console.log(duplicateEncode('(( @')); // "))(("
+
+
+// TODO Task #35 List Filtering
+
+/* In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+Example
+filter_list([1,2,'a','b']) == [1,2]
+filter_list([1,'a','b',0,15]) == [1,0,15]
+filter_list([1,2,'aasf','1','123',123]) == [1,2,123] */
+
+function filter_list(l) {
+  return l.filter((element) => typeof element === "number");
 }
 
-console.log(duplicateEncode('din')); // "((("
-console.log(duplicateEncode('recede')); // "()()()"
-console.log(duplicateEncode('Success')); // ")())())"
-console.log(duplicateEncode('(( @')); // "))(("
+console.log(filter_list([1,2,'a','b']); // [1,2]
+
+
+
