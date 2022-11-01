@@ -928,3 +928,9 @@ Examples: (Input --> Output)
 
 [] --> []
 ["a", "b", "c"] --> ["1: a", "2: b", "3: c"] */
+
+const number = array => {
+  return array.map((value, index) => `${index + 1}: ${value}`);
+};
+
+console.log(number(['a', 'b', 'c']), ['1: a', '2: b', '3: c']);
