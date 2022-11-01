@@ -852,21 +852,16 @@ Assertion messages may be unclear about what they display in some languages. If 
 // console.log(duplicateEncode('Success')); // ")())())"
 // console.log(duplicateEncode('(( @')); // "))(("
 
-
-
 // function count(num1, num2, mark) {
 //   /* ваш код тут */
 // }
-
 
 // console.log(duplicateEncode('din')); // "((("
 // console.log(duplicateEncode('recede')); // "()()()"
 // console.log(duplicateEncode('Success')); // ")())())"
 // console.log(duplicateEncode('(( @')); // "))(("
 
-
 // TODO Task #35 List Filtering
-
 /* In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
 
 Example
@@ -881,7 +876,6 @@ filter_list([1,2,'aasf','1','123',123]) == [1,2,123] */
 // console.log(filter_list([1,2,'a','b'])); // [1,2]
 
 // TODO Task #36 Remove the minimum
-
 /* The museum of incredible dull things
 The museum of incredible dull things wants to get rid of some exhibitions. Miriam, the interior architect, comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the one with the lowest rating.
 
@@ -906,3 +900,31 @@ Examples
 // console.log(removeSmallest([1, 2, 3, 4, 5])); // [2, 3, 4, 5]
 // console.log(removeSmallest([5, 3, 2, 1, 4])); // [5, 3, 2, 4]
 
+// TODO Task #37 Sum of positive
+/* You get an array of numbers, return the sum of all of the positives ones.
+
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+
+Note: if there is nothing to sum, the sum is default to 0. */
+
+// function positiveSum(arr) {
+//   return arr.reduce((acc, number) => number >= 0 ? acc + number : acc + 0, 0);
+// }
+
+// console.log(positiveSum([1, 2, 3, 4, 5]), 15);
+// console.log(positiveSum([1, -2, 3, 4, 5]), 13);
+// console.log(positiveSum([]), 0);
+// console.log(positiveSum([-1, -2, -3, -4, -5]), 0);
+// console.log(positiveSum([-1, 2, 3, 4, -5]), 9);
+
+// TODO Task #38 Testing 1-2-3
+/* Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+
+Write a function which takes a list of strings and returns each line prepended by the correct number.
+
+The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+
+Examples: (Input --> Output)
+
+[] --> []
+["a", "b", "c"] --> ["1: a", "2: b", "3: c"] */
