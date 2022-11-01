@@ -854,8 +854,55 @@ Assertion messages may be unclear about what they display in some languages. If 
 
 
 
-console.log(10 + '20');
-
 // function count(num1, num2, mark) {
 //   /* ваш код тут */
 // }
+
+
+// console.log(duplicateEncode('din')); // "((("
+// console.log(duplicateEncode('recede')); // "()()()"
+// console.log(duplicateEncode('Success')); // ")())())"
+// console.log(duplicateEncode('(( @')); // "))(("
+
+
+// TODO Task #35 List Filtering
+
+/* In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+Example
+filter_list([1,2,'a','b']) == [1,2]
+filter_list([1,'a','b',0,15]) == [1,0,15]
+filter_list([1,2,'aasf','1','123',123]) == [1,2,123] */
+
+// function filter_list(l) {
+//   return l.filter((element) => typeof element === "number");
+// }
+
+// console.log(filter_list([1,2,'a','b'])); // [1,2]
+
+// TODO Task #36 Remove the minimum
+
+/* The museum of incredible dull things
+The museum of incredible dull things wants to get rid of some exhibitions. Miriam, the interior architect, comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the one with the lowest rating.
+
+However, just as she finished rating all exhibitions, she's off to an important fair, so she asks you to write a program that tells her the ratings of the items after one removed the lowest one. Fair enough.
+
+Task
+Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+Don't change the order of the elements that are left.
+
+Examples
+* Input: [1,2,3,4,5], output= [2,3,4,5]
+* Input: [5,3,2,1,4], output = [5,3,2,4]
+* Input: [2,2,1,2,1], output = [2,2,2,1] */
+
+// function removeSmallest(numbers) {
+//   return numbers.filter(
+//     (number, index, array) => index !== array.indexOf(Math.min(...array))
+//   );
+// }
+
+// console.log(removeSmallest([1, 2, 3, 4, 5])); // [2, 3, 4, 5]
+// console.log(removeSmallest([5, 3, 2, 1, 4])); // [5, 3, 2, 4]
+
