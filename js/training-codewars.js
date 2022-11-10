@@ -929,8 +929,125 @@ Examples: (Input --> Output)
 [] --> []
 ["a", "b", "c"] --> ["1: a", "2: b", "3: c"] */
 
-const number = array => {
-  return array.map((value, index) => `${index + 1}: ${value}`);
-};
+// const number = array => {
+//   return array.map((value, index) => `${index + 1}: ${value}`);
+// };
 
-console.log(number(['a', 'b', 'c']), ['1: a', '2: b', '3: c']);
+// console.log(number(['a', 'b', 'c']), ['1: a', '2: b', '3: c']);
+
+// TODO Task #39 The Supermarket Queue
+/* There is a queue for the self-checkout tills at the supermarket. Your task is write a function to calculate the total time required for all the customers to check out!
+
+input
+customers: an array of positive integers representing the queue. Each integer represents a customer, and its value is the amount of time they require to check out.
+n: a positive integer, the number of checkout tills.
+output
+The function should return an integer, the total time required.
+
+Important
+Please look at the examples and clarifications below, to ensure you understand the task correctly :)
+
+Examples
+queueTime([5,3,4], 1)
+// should return 12
+// because when there is 1 till, the total time is just the sum of the times
+
+queueTime([10,2,3,3], 2)
+// should return 10
+// because here n=2 and the 2nd, 3rd, and 4th people in the 
+// queue finish before the 1st person has finished.
+
+queueTime([2,3,10], 2)
+// should return 12 */
+
+// function queueTime(customers, n) {
+//   if (n === 1) {
+//     return customers.reduce((acc, e) => acc + e, 0);
+//   }
+
+//   let inService = customers.slice(0, n);
+//   const queue = customers.slice(n, customers.length);
+
+//   const result = queue.map(e => {
+//     return inService.splice(
+//       inService.indexOf(Math.min(...inService)),
+//       1,
+//       Math.min(...inService) + e
+//     );
+//   });
+
+//   return Math.max(...inService);
+// }
+
+// console.log(queueTime([24, 25, 35, 10, 18, 24, 14, 20, 32, 17, 41, 20, 20, 31, 39], 4), 107);
+// console.log(queueTime([], 1), 0);
+// console.log(queueTime([1, 2, 3, 4], 1), 10);
+// console.log(queueTime([2, 2, 3, 3, 4, 4], 2), 9);
+// console.log(queueTime([1, 2, 3, 4, 5], 100), 5);
+// console.log(
+//   queueTime(
+//     [13, 8, 40, 14, 29, 28, 39, 25, 15, 42, 43, 22, 18, 14, 17, 38, 1, 36, 5, 23, 48, 26],
+//     4
+//   ),
+//   149
+// );
+
+// TODO Task #40 Will there be enough space?
+/* The Story:
+Bob is working as a bus driver. However, he has become extremely popular amongst the city's residents. With so many passengers wanting to get aboard his bus, he sometimes has to face the problem of not enough space left on the bus! He wants you to write a simple program telling him if he will be able to fit all the passengers.
+
+Task Overview:
+You have to write a function that accepts three parameters:
+
+cap is the amount of people the bus can hold excluding the driver.
+on is the number of people on the bus excluding the driver.
+wait is the number of people waiting to get on to the bus excluding the driver.
+If there is enough space, return 0, and if there isn't, return the number of passengers he can't take.
+
+Usage Examples:
+cap = 10, on = 5, wait = 5 --> 0 # He can fit all 5 passengers
+cap = 100, on = 60, wait = 50 --> 10 # He can't fit 10 of the 50 waitin */
+
+// function enough(cap, on, wait) {
+//   const pass = on + wait;
+//   const result = cap - pass;
+//   // console.log(result);
+//   // return Math.abs(result);
+
+//   if (pass < cap) {
+//     return 0;
+//   } else {
+//     return Math.abs(result);
+//   }
+// }
+
+// function enough(cap, on, wait) {
+//   return on + wait < cap ? 0 : Math.abs(cap - (on + wait));
+// }
+
+// console.log(enough(10, 5, 5), 0);
+// console.log(enough(100, 60, 50), 10);
+// console.log(enough(20, 5, 5), 0);
+
+// TODO Task #41 The highest profit wins!
+/* Story
+Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
+
+Task
+Write a function that returns both the minimum and maximum number of the given list/array.
+
+Examples (Input --> Output)
+[1,2,3,4,5] --> [1,5]
+[2334454,5] --> [5,2334454]
+[1]         --> [1,1] */
+
+// function minMax(arr) {
+//   const min = Math.min(...arr);
+//   const max = Math.max(...arr);
+
+//   return [min, max];
+// }
+
+// console.log(minMax([1, 2, 3, 4, 5], [1, 5]));
+// console.log(minMax([2334454, 5], [5, 2334454]));
+// console.log(minMax([5])[(5, 5)]);
